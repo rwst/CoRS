@@ -1,0 +1,3066 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="urn:webprotege:ontology:c8241426-8b3a-4a0b-a83c-f6ba55ee6e5d#"
+     xml:base="urn:webprotege:ontology:c8241426-8b3a-4a0b-a83c-f6ba55ee6e5d"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="urn:webprotege:ontology:c8241426-8b3a-4a0b-a83c-f6ba55ee6e5d"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#sameAs -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#sameAs">
+        <rdfs:label>owl:sameAs</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:CoRS#part_of -->
+
+    <owl:ObjectProperty rdf:about="urn:CoRS#part_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:CoRS#AI_agent -->
+
+    <owl:Class rdf:about="urn:CoRS#AI_agent">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#intelligent_agent"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#software_agent"/>
+        <rdfs:label xml:lang="en">AI agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#LiDAR-inertial_odometry -->
+
+    <owl:Class rdf:about="urn:CoRS#LiDAR-inertial_odometry">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#odometry"/>
+        <rdfs:label xml:lang="en">LiDAR-inertial odometry</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">method that combines data from LiDAR (Light Detection and Ranging) and an Inertial Measurement Unit (IMU) to estimate the position, orientation, and motion of a robot or vehicle</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#SLAM -->
+
+    <owl:Class rdf:about="urn:CoRS#SLAM">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#algorithm"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SLAM</rdfs:label>
+        <rdfs:label xml:lang="en">simultaneous localization and mapping</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">computational process by which a robot constructs or updates a map of an unknown environment while simultaneously keeping track of its own location within that map</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#action -->
+
+    <owl:Class rdf:about="urn:CoRS#action">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#physical_process"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planned_process"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#actionable_skill -->
+
+    <owl:Class rdf:about="urn:CoRS#actionable_skill">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#skill"/>
+        <rdfs:label xml:lang="en">actionable skill</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">practical ability that can be directly applied to achieve specific, tangible outcomes or solve real-world problems</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#actuator -->
+
+    <owl:Class rdf:about="urn:CoRS#actuator">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robot_subsystem"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#actuator_control_technique -->
+
+    <owl:Class rdf:about="urn:CoRS#actuator_control_technique">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#algorithm"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ACT</rdfs:label>
+        <rdfs:label xml:lang="en">actuator control technique</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">methods and algorithms used to control the movement and force output of actuators, ensuring precise and efficient operation of robotic systems</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#advanced_decision-making -->
+
+    <owl:Class rdf:about="urn:CoRS#advanced_decision-making">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#software_feature"/>
+        <rdfs:label xml:lang="en">advanced decision-making</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the capability of a robot to autonomously make complex choices in real-time, based on a combination of sensor data, learned models, and strategic algorithms, often involving reasoning, planning, and adapting to dynamic environments or unforeseen circumstances</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#agent -->
+
+    <owl:Class rdf:about="urn:CoRS#agent">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#independent_continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#algorithm -->
+
+    <owl:Class rdf:about="urn:CoRS#algorithm">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planned_process"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#analytical_planning -->
+
+    <owl:Class rdf:about="urn:CoRS#analytical_planning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planning"/>
+        <rdfs:label xml:lang="en">analytical planning</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">method of using mathematical models and algorithms to determine the best sequence of actions for a robot to achieve a specific goal, often involving optimization techniques to solve problems like path planning or motion control</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#arm-base_coordination -->
+
+    <owl:Class rdf:about="urn:CoRS#arm-base_coordination">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+        <rdfs:label xml:lang="en">arm-base coordination</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the synchronized movement and interaction between a robot&apos;s manipulator arm and its mobile base to achieve tasks efficiently and effectively</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#atomic_action -->
+
+    <owl:Class rdf:about="urn:CoRS#atomic_action">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#action"/>
+        <rdfs:label xml:lang="en">atomic action</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basic, indivisible operation that a robot can perform, which cannot be interrupted or decomposed into smaller actions</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#autonomous_termination -->
+
+    <owl:Class rdf:about="urn:CoRS#autonomous_termination">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robot_autonomy"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#chain-of-thought_prompt -->
+
+    <owl:Class rdf:about="urn:CoRS#chain-of-thought_prompt">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#instruction"/>
+        <rdfs:label xml:lang="en">chain-of-thought prompt</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence of reasoning steps or instructions used to guide a robot through complex tasks, breaking them down into simpler, logical sub-tasks</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#coarse_planner -->
+
+    <owl:Class rdf:about="urn:CoRS#coarse_planner">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planner"/>
+        <rdfs:label xml:lang="en">coarse planner</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">while similar in its approach to a high-level planner, specifically implies a planning method that uses less detailed or more generalized actions to achieve objectives.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#collaborative_task -->
+
+    <owl:Class rdf:about="urn:CoRS#collaborative_task">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#computational_problem"/>
+        <rdfs:label xml:lang="en">collaborative task</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">activity where robots and humans work together, sharing the workspace and responsibilities to achieve a common goal</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#communication -->
+
+    <owl:Class rdf:about="urn:CoRS#communication">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#process"/>
+        <rdfs:label xml:lang="en">communication</rdfs:label>
+        <skos:definition rdf:resource="https://www.wikidata.org/wiki/Q11024"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">act of conveying intended meaning</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#computational_problem -->
+
+    <owl:Class rdf:about="urn:CoRS#computational_problem">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#mathematical_problem"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#computer -->
+
+    <owl:Class rdf:about="urn:CoRS#computer">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robot_subsystem"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#construction_site -->
+
+    <owl:Class rdf:about="urn:CoRS#construction_site">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#environment"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#continuant -->
+
+    <owl:Class rdf:about="urn:CoRS#continuant"/>
+    
+
+
+    <!-- urn:CoRS#contrastive_language-image_pretraining -->
+
+    <owl:Class rdf:about="urn:CoRS#contrastive_language-image_pretraining">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#pre-training"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CLIP</rdfs:label>
+        <rdfs:label xml:lang="en">contrastive language-image pretraining</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pretraining of a model that learns to connect images and text by training on a vast dataset of image-text pairs, allowing it to perform tasks like zero-shot classification where it can recognize and categorize new objects based on textual descriptions without specific training for those objects</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#contrastive_learning -->
+
+    <owl:Class rdf:about="urn:CoRS#contrastive_learning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_algorithm"/>
+        <rdfs:label xml:lang="en">contrastive learning</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">machine learning technique where models learn to distinguish between similar (positive) and dissimilar (negative) pairs of data samples, enhancing feature representation through comparison</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#cost_map -->
+
+    <owl:Class rdf:about="urn:CoRS#cost_map">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_data_structure"/>
+        <rdfs:label xml:lang="en">cost map</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">grid-based representation where each cell indicates the cost or penalty associated with traversing that location, used for path planning and navigation to avoid obstacles or hazardous areas</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#cross-attention -->
+
+    <owl:Class rdf:about="urn:CoRS#cross-attention">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#software_feature"/>
+        <rdfs:label xml:lang="en">cross-attention</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mechanism where a model processes information from one source (e.g., sensor data) in the context of another (e.g., task goals or previous states), allowing for more informed and context-aware decision-making or control actions</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#cross-embodiment_gap -->
+
+    <owl:Class rdf:about="urn:CoRS#cross-embodiment_gap">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#phenomenon"/>
+        <rdfs:label xml:lang="en">cross-embodiment gap</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">challenges in transferring learned behaviors or policies from one robot embodiment (e.g., one type of robot with specific sensors and actuators) to another that has different physical characteristics</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#decision_transformer -->
+
+    <owl:Class rdf:about="urn:CoRS#decision_transformer">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_model"/>
+        <rdfs:label xml:lang="en">decision transformer</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">model that uses transformer architecture to convert sequences of observations, actions, and rewards into future actions, essentially learning to make decisions by predicting optimal behavior from historical data</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#dependency-aware_task_decomposition -->
+
+    <owl:Class rdf:about="urn:CoRS#dependency-aware_task_decomposition">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#task_decomposition"/>
+        <rdfs:label xml:lang="en">dependency-aware task decomposition</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the process of breaking down a complex task into smaller, manageable subtasks while explicitly considering and managing the dependencies between these subtasks to ensure they are executed in a logical and efficient sequence</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#dependency_satisfaction_rate -->
+
+    <owl:Class rdf:about="urn:CoRS#dependency_satisfaction_rate">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DSR</rdfs:label>
+        <rdfs:label xml:lang="en">dependency satisfaction rate</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the proportion of subtasks completed in the correct order of dependencies</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#direct_lidar_odometry -->
+
+    <owl:Class rdf:about="urn:CoRS#direct_lidar_odometry">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#odometry"/>
+        <rdfs:label xml:lang="en">direct lidar odometry</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">method that estimates motion directly from raw LiDAR point cloud data without relying on feature extraction, using optimization techniques to align consecutive scans</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#disaster_response_site -->
+
+    <owl:Class rdf:about="urn:CoRS#disaster_response_site">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#environment"/>
+        <rdfs:label xml:lang="en">disaster response site</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#dropout -->
+
+    <owl:Class rdf:about="urn:CoRS#dropout">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_algorithm"/>
+        <rdfs:label xml:lang="en">dropout</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">technique where randomly selected neurons are ignored during training, enhancing generalization and preventing overfitting in neural networks</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#end-to-end_reinforcement_learning -->
+
+    <owl:Class rdf:about="urn:CoRS#end-to-end_reinforcement_learning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#reinforcement_learning"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#end-to-end_robot_learning -->
+
+    <owl:Class rdf:about="urn:CoRS#end-to-end_robot_learning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#end-to-end_reinforcement_learning"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#energy_source -->
+
+    <owl:Class rdf:about="urn:CoRS#energy_source">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robot_subsystem"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#environment -->
+
+    <owl:Class rdf:about="urn:CoRS#environment">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#three-dimensional_spatial_region"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#environment_representation -->
+
+    <owl:Class rdf:about="urn:CoRS#environment_representation">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_data_structure"/>
+        <rdfs:label xml:lang="en">environment representation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#expert-agent_observation_gap -->
+
+    <owl:Class rdf:about="urn:CoRS#expert-agent_observation_gap">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#phenomenon"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#fine-grained_planner -->
+
+    <owl:Class rdf:about="urn:CoRS#fine-grained_planner">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planner"/>
+        <rdfs:label xml:lang="en">fine-grained planner</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">planner invoking actionable skills at particular nodes given individual tasks generated by the coarse planner</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#fine-tuning -->
+
+    <owl:Class rdf:about="urn:CoRS#fine-tuning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#fleet_learning -->
+
+    <owl:Class rdf:about="urn:CoRS#fleet_learning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#formal_language -->
+
+    <owl:Class rdf:about="urn:CoRS#formal_language">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#functional_specification"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#foundation_model -->
+
+    <owl:Class rdf:about="urn:CoRS#foundation_model">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_model"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#functional_specification -->
+
+    <owl:Class rdf:about="urn:CoRS#functional_specification">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#information_content_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#generalist_artificial_intelligence_model -->
+
+    <owl:Class rdf:about="urn:CoRS#generalist_artificial_intelligence_model">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_model"/>
+        <rdfs:label xml:lang="en">generalist artificial intelligence model</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AI system capable of performing a wide variety of tasks across different domains, without being specifically trained for each individual task. It aims to adapt and learn from diverse experiences much like a human generalist</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#gripper -->
+
+    <owl:Class rdf:about="urn:CoRS#gripper">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#actuator"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#grounding_in_embodiments -->
+
+    <owl:Class rdf:about="urn:CoRS#grounding_in_embodiments">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#phenomenon"/>
+        <rdfs:label xml:lang="en">grounding in embodiments</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">how well a robot executes commands in various contexts, indicating the degree of grounding.
+The adaptability of a robot&apos;s behavior when faced with new or changed environments, suggesting how deeply concepts are grounded in physical experiences</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#hierarchical_scene_graph -->
+
+    <owl:Class rdf:about="urn:CoRS#hierarchical_scene_graph">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#environment_representation"/>
+        <rdfs:label xml:lang="en">hierarchical scene graph</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">structured representation of a scene where nodes denote objects or concepts, and edges represent relationships, organized in a tree-like hierarchy to depict spatial or semantic arrangements</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#hierarchical_search -->
+
+    <owl:Class rdf:about="urn:CoRS#hierarchical_search">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#path-planning_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#high-level_communication -->
+
+    <owl:Class rdf:about="urn:CoRS#high-level_communication">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#communication"/>
+        <rdfs:label xml:lang="en">high-level communication</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the exchange of abstract, task-oriented, or strategic information among robots, rather than low-level sensor or actuator data, facilitating coordinated actions and decision-making</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#high-level_planner -->
+
+    <owl:Class rdf:about="urn:CoRS#high-level_planner">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planner"/>
+        <rdfs:label xml:lang="en">high-level planner</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">algorithm or system that determines the overall strategy or sequence of actions to achieve a given task, focusing on abstract goals rather than specific movements or low-level control</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#humanoid_robot -->
+
+    <owl:Class rdf:about="urn:CoRS#humanoid_robot">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robot"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#imitation_learning -->
+
+    <owl:Class rdf:about="urn:CoRS#imitation_learning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#immaterial_entity -->
+
+    <owl:Class rdf:about="urn:CoRS#immaterial_entity">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#independent_continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#in-hand_manipulation -->
+
+    <owl:Class rdf:about="urn:CoRS#in-hand_manipulation">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#action"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#in_the_wild -->
+
+    <owl:Class rdf:about="urn:CoRS#in_the_wild">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#environment"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#independent_continuant -->
+
+    <owl:Class rdf:about="urn:CoRS#independent_continuant">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#information_content_entity -->
+
+    <owl:Class rdf:about="urn:CoRS#information_content_entity">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#immaterial_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#instruction -->
+
+    <owl:Class rdf:about="urn:CoRS#instruction">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#message"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#instruction_parsing_accuracy -->
+
+    <owl:Class rdf:about="urn:CoRS#instruction_parsing_accuracy">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+        <rdfs:label xml:lang="en">instruction parsing accuracy</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the proportion of correctly parsed instructions mapped to the correct atomic
+action function names and parameters</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#intelligent_agent -->
+
+    <owl:Class rdf:about="urn:CoRS#intelligent_agent">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#agent"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#intelligent_command_interface -->
+
+    <owl:Class rdf:about="urn:CoRS#intelligent_command_interface">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_component"/>
+        <rdfs:label xml:lang="en">intelligent command interface</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">user interface that interprets and executes complex commands by understanding natural language, context, or user intent, often incorporating AI to enhance interaction efficiency and adaptability</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#language-conditioned_imitation_learning -->
+
+    <owl:Class rdf:about="urn:CoRS#language-conditioned_imitation_learning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#imitation_learning"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#language_model -->
+
+    <owl:Class rdf:about="urn:CoRS#language_model">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_model"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#large_language_model -->
+
+    <owl:Class rdf:about="urn:CoRS#large_language_model">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#language_model"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#large_multimodal_model -->
+
+    <owl:Class rdf:about="urn:CoRS#large_multimodal_model">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_model"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#long-horizon_planning -->
+
+    <owl:Class rdf:about="urn:CoRS#long-horizon_planning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planning"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#long-horizon_task -->
+
+    <owl:Class rdf:about="urn:CoRS#long-horizon_task">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#computational_problem"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#low-level_controller -->
+
+    <owl:Class rdf:about="urn:CoRS#low-level_controller">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robot_subsystem"/>
+        <rdfs:label xml:lang="en">low-level controller</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">manages the direct interaction of robot software with hardware, handling tasks like motor control, sensor reading, and basic movement commands, ensuring precise execution of physical actions</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#low-level_path_planning -->
+
+    <owl:Class rdf:about="urn:CoRS#low-level_path_planning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#path_planning"/>
+        <rdfs:label xml:lang="en">low-level path planning</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the process of determining the immediate, detailed movements a robot must make to navigate from one point to another, typically focusing on obstacle avoidance and fine motor control within a short time horizon or distance</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#machine_learning_algorithm -->
+
+    <owl:Class rdf:about="urn:CoRS#machine_learning_algorithm">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#machine_learning_model -->
+
+    <owl:Class rdf:about="urn:CoRS#machine_learning_model">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#mathematical_model"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_data_structure"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#material_entity -->
+
+    <owl:Class rdf:about="urn:CoRS#material_entity">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#independent_continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#mathematical_model -->
+
+    <owl:Class rdf:about="urn:CoRS#mathematical_model">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#information_content_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#mathematical_problem -->
+
+    <owl:Class rdf:about="urn:CoRS#mathematical_problem">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#problem"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#message -->
+
+    <owl:Class rdf:about="urn:CoRS#message">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_data_structure"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#model-based_hierarchical_trajectory_optimization -->
+
+    <owl:Class rdf:about="urn:CoRS#model-based_hierarchical_trajectory_optimization">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#path-planning_algorithm"/>
+        <rdfs:label xml:lang="en">model-based hierarchical trajectory optimization</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">method where complex motion planning is broken down into hierarchical levels. At each level, optimization techniques are applied to generate and refine trajectories based on a model of the robot and its environment, aiming to achieve tasks efficiently while respecting kinematic and dynamic constraints</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#motion -->
+
+    <owl:Class rdf:about="urn:CoRS#motion">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#physical_process"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planned_process"/>
+        <rdfs:label xml:lang="en">motion</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">change in position of an object over time; a body is said to be in motion if it changes its position or orientation with respect to its immediate surroundings</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#multi-modal_sensing -->
+
+    <owl:Class rdf:about="urn:CoRS#multi-modal_sensing">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#sensing"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#multi-robot_system -->
+
+    <owl:Class rdf:about="urn:CoRS#multi-robot_system">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_system"/>
+        <rdfs:label xml:lang="en">multi-robot system</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">group of robots that work together to perform tasks, coordinating their actions to achieve common goals or enhance performance beyond what a single robot could accomplish</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#object_detector -->
+
+    <owl:Class rdf:about="urn:CoRS#object_detector">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_component"/>
+        <rdfs:label xml:lang="en">object detector</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">component or algorithm that identifies and locates specific objects within its sensory input, such as images or point clouds, enabling the robot to recognize and interact with its enviroment</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#object_map -->
+
+    <owl:Class rdf:about="urn:CoRS#object_map">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#environment_representation"/>
+        <rdfs:label xml:lang="en">object map</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">representation of the environment where objects are identified, localized, and tracked, providing a spatial understanding for navigation and interaction</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#observable -->
+
+    <owl:Class rdf:about="urn:CoRS#observable">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#quality"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#obstacle_avoidance -->
+
+    <owl:Class rdf:about="urn:CoRS#obstacle_avoidance">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#computational_problem"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#odometry -->
+
+    <owl:Class rdf:about="urn:CoRS#odometry">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#online_machine_learning -->
+
+    <owl:Class rdf:about="urn:CoRS#online_machine_learning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#open-ended_environment -->
+
+    <owl:Class rdf:about="urn:CoRS#open-ended_environment">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#simulated_environment"/>
+        <rdfs:label xml:lang="en">open-ended environment</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">setting where the robot must operate without predefined or fully known conditions, adapting to unpredictable and dynamic scenarios</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#out_of_the_box_feature -->
+
+    <owl:Class rdf:about="urn:CoRS#out_of_the_box_feature">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#software_feature"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#parallel_task_execution -->
+
+    <owl:Class rdf:about="urn:CoRS#parallel_task_execution">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+        <rdfs:label xml:lang="en">parallel task execution</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in a single robot, the simultaneous performance of multiple tasks or operations by different components or processors within a robotic system to enhance efficiency and speed; in multi-robot systems, the coordinated simultaneous operation of single or multiple tasks by different robots within the system to achieve collective goals more efficiently</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#path-planning_algorithm -->
+
+    <owl:Class rdf:about="urn:CoRS#path-planning_algorithm">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#path_planning -->
+
+    <owl:Class rdf:about="urn:CoRS#path_planning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planning"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#phenomenon -->
+
+    <owl:Class rdf:about="urn:CoRS#phenomenon"/>
+    
+
+
+    <!-- urn:CoRS#physical_process -->
+
+    <owl:Class rdf:about="urn:CoRS#physical_process">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#process"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#planned_process -->
+
+    <owl:Class rdf:about="urn:CoRS#planned_process">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#process"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#planner -->
+
+    <owl:Class rdf:about="urn:CoRS#planner">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_component"/>
+        <rdfs:label xml:lang="en">planner</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">algorithm or system that determines a sequence of actions or movements for a robot to achieve a specific goal or navigate through an environment</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#planning -->
+
+    <owl:Class rdf:about="urn:CoRS#planning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#reasoning"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#policy -->
+
+    <owl:Class rdf:about="urn:CoRS#policy">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#functional_specification"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#pre-training -->
+
+    <owl:Class rdf:about="urn:CoRS#pre-training">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#problem -->
+
+    <owl:Class rdf:about="urn:CoRS#problem">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#phenomenon"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#procedurally_generated_world -->
+
+    <owl:Class rdf:about="urn:CoRS#procedurally_generated_world">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#simulated_environment"/>
+        <rdfs:label xml:lang="en">procedurally generated world</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">environment or simulation that is automatically created using algorithms rather than being manually designed. This approach allows for the dynamic generation of diverse, complex, and often unpredictable scenarios for testing, training, or operating robots.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#process -->
+
+    <owl:Class rdf:about="urn:CoRS#process">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#immaterial_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#quadruped_robot -->
+
+    <owl:Class rdf:about="urn:CoRS#quadruped_robot">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robot"/>
+        <rdfs:label xml:lang="en">quadruped robot</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">robotic system designed with four legs, mimicking the locomotion of four-legged animals to navigate and interact with various terrains</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#quality -->
+
+    <owl:Class rdf:about="urn:CoRS#quality">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#specifically_dependent_continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#re-planning -->
+
+    <owl:Class rdf:about="urn:CoRS#re-planning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planning"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#real-world_setting -->
+
+    <owl:Class rdf:about="urn:CoRS#real-world_setting">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#environment"/>
+        <rdfs:label xml:lang="en">real-world setting</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">actual, physical environment where robots operate, as opposed to simulated or controlled lab conditions</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#real-world_task -->
+
+    <owl:Class rdf:about="urn:CoRS#real-world_task">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#computational_problem"/>
+        <rdfs:label xml:lang="en">real-world task</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">any physical activity or operation that a robot performs in an actual, non-simulated environment, such as navigating through a space, manipulating objects, or interacting with humans or other entities in real-time</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#reasoning -->
+
+    <owl:Class rdf:about="urn:CoRS#reasoning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#process"/>
+        <rdfs:label xml:lang="en">reasoning</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the process by which a robot uses logic, algorithms, and data to make decisions, solve problems, or plan actions based on its understanding of its environment and objectives</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#reinforcement_learning -->
+
+    <owl:Class rdf:about="urn:CoRS#reinforcement_learning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#robot -->
+
+    <owl:Class rdf:about="urn:CoRS#robot">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_system"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:CoRS#part_of"/>
+                <owl:someValuesFrom rdf:resource="urn:CoRS#multi-robot_system"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#robot_autonomy -->
+
+    <owl:Class rdf:about="urn:CoRS#robot_autonomy">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#robot_development_tool -->
+
+    <owl:Class rdf:about="urn:CoRS#robot_development_tool">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#system"/>
+        <rdfs:label xml:lang="en">robot development tool</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#robot_subsystem -->
+
+    <owl:Class rdf:about="urn:CoRS#robot_subsystem">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#system"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:CoRS#part_of"/>
+                <owl:someValuesFrom rdf:resource="urn:CoRS#robot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">robot subsystem</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">any static part of a robot, hardware or software</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#robot_workspace -->
+
+    <owl:Class rdf:about="urn:CoRS#robot_workspace">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#three-dimensional_spatial_region"/>
+        <rdfs:label xml:lang="en">robot workspace</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the total volume of space that a robot&apos;s end-effector can reach and manipulate within its operational limits</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#robotic_foundation_model -->
+
+    <owl:Class rdf:about="urn:CoRS#robotic_foundation_model">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#foundation_model"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#robotic_policy -->
+
+    <owl:Class rdf:about="urn:CoRS#robotic_policy">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#policy"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#robotic_software_component -->
+
+    <owl:Class rdf:about="urn:CoRS#robotic_software_component">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#information_content_entity"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robot_subsystem"/>
+        <rdfs:label xml:lang="en">robotic software component</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">software package, web service, web resource, or module that encapsulates a set of related functions and is part of a robot</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#robotic_software_data_structure -->
+
+    <owl:Class rdf:about="urn:CoRS#robotic_software_data_structure">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_component"/>
+        <rdfs:label xml:lang="en">robotic software data structure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#robotic_system -->
+
+    <owl:Class rdf:about="urn:CoRS#robotic_system">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#AI_agent"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#system"/>
+        <rdfs:label xml:lang="en">robotic system</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integrated setup of hardware and software components, including actuators, sensors, controllers, and processors, designed to perform tasks autonomously or semi-autonomously</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#sampling-based_planning -->
+
+    <owl:Class rdf:about="urn:CoRS#sampling-based_planning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#path-planning_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#scene_graph_construction_algorithm -->
+
+    <owl:Class rdf:about="urn:CoRS#scene_graph_construction_algorithm">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#algorithm"/>
+        <rdfs:label xml:lang="en">scene graph construction algorithm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#semantic_grounding_success_rate -->
+
+    <owl:Class rdf:about="urn:CoRS#semantic_grounding_success_rate">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+        <rdfs:label xml:lang="en">semantic grounding success rate</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">percentage of instances where a robot correctly associates sensory inputs with their corresponding meanings or concepts in the real world</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#sensing -->
+
+    <owl:Class rdf:about="urn:CoRS#sensing">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#sensor -->
+
+    <owl:Class rdf:about="urn:CoRS#sensor">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robot_subsystem"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#sim2real_RL -->
+
+    <owl:Class rdf:about="urn:CoRS#sim2real_RL">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planned_process"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sim2real RL</rdfs:label>
+        <rdfs:label xml:lang="en">simulation to reality reinforcement learning</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the process of training reinforcement learning agents in simulated environments and then transferring the learned policies to real-world robotic systems, aiming to bridge the gap between simulation and reality</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#simulated_environment -->
+
+    <owl:Class rdf:about="urn:CoRS#simulated_environment">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#environment"/>
+        <rdfs:label xml:lang="en">simulated environment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#simulator -->
+
+    <owl:Class rdf:about="urn:CoRS#simulator">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robot_development_tool"/>
+        <rdfs:label xml:lang="en">simulation platform</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">simulator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#skill -->
+
+    <owl:Class rdf:about="urn:CoRS#skill">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#software_feature"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#skill_library -->
+
+    <owl:Class rdf:about="urn:CoRS#skill_library">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_data_structure"/>
+        <rdfs:label xml:lang="en">skill library</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">collection of reusable, pre-programmed or learned behaviors or actions that robots can execute to perform specific tasks efficiently</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#software_agent -->
+
+    <owl:Class rdf:about="urn:CoRS#software_agent">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#agent"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#software_feature -->
+
+    <owl:Class rdf:about="urn:CoRS#software_feature">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#spatial_region -->
+
+    <owl:Class rdf:about="urn:CoRS#spatial_region">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#immaterial_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#specifically_dependent_continuant -->
+
+    <owl:Class rdf:about="urn:CoRS#specifically_dependent_continuant">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#continuant"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#system -->
+
+    <owl:Class rdf:about="urn:CoRS#system">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#material_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#task_decomposition -->
+
+    <owl:Class rdf:about="urn:CoRS#task_decomposition">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#algorithm"/>
+        <rdfs:label xml:lang="en">task decomposition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#task_dependency -->
+
+    <owl:Class rdf:about="urn:CoRS#task_dependency">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_data_structure"/>
+        <rdfs:label xml:lang="en">task dependency</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relationship where the execution of one task relies on the completion or state of another task</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#task_success_rate -->
+
+    <owl:Class rdf:about="urn:CoRS#task_success_rate">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+        <rdfs:label xml:lang="en">task success rate</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">percentage of tasks that a robot completes successfully out of all attempted tasks</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#teleoperation -->
+
+    <owl:Class rdf:about="urn:CoRS#teleoperation">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planned_process"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#template-free_command_understanding -->
+
+    <owl:Class rdf:about="urn:CoRS#template-free_command_understanding">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#software_feature"/>
+        <rdfs:label xml:lang="en">template-free command understanding</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ability to understand commands that does not rely on predefined templates or patterns, allowing for more flexible or dynamic execution based on real-time data or user input</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#therblig -->
+
+    <owl:Class rdf:about="urn:CoRS#therblig">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#action"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#three-dimensional_spatial_region -->
+
+    <owl:Class rdf:about="urn:CoRS#three-dimensional_spatial_region">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#spatial_region"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#transferable_skill -->
+
+    <owl:Class rdf:about="urn:CoRS#transferable_skill">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#skill"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#vision-language_model -->
+
+    <owl:Class rdf:about="urn:CoRS#vision-language_model">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_model"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VLM</rdfs:label>
+        <rdfs:label xml:lang="en">vision-language model</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ML model that integrates visual perception with natural language processing to understand and generate responses based on both visual inputs and linguistic data</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#whole-body_control -->
+
+    <owl:Class rdf:about="urn:CoRS#whole-body_control">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WBC</rdfs:label>
+        <rdfs:label xml:lang="en">whole-body control</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the coordinated control of all degrees of freedom of a robot, ensuring that the entire body works in unison to achieve a task, while respecting physical constraints and optimizing performance metrics</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#workplace_process -->
+
+    <owl:Class rdf:about="urn:CoRS#workplace_process">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planned_process"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#3D_gesture_keypoint -->
+
+    <owl:Class rdf:about="urn:CoRS#3D_gesture_keypoint">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_data_structure"/>
+        <rdfs:label xml:lang="en">3D gesture keypoint</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a specific point in three-dimensional space that is tracked to interpret and analyze human gestures or movements, typically used for gesture recognition and interaction with robotic systems</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#6DOF_pose -->
+
+    <owl:Class rdf:about="urn:CoRS#6DOF_pose">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_data_structure"/>
+        <rdfs:label xml:lang="en">6DOF pose</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the position and orientation of an object in three-dimensional space, described by six degrees of freedom: three for translation (x, y, z coordinates) and three for rotation (roll, pitch, yaw)</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#VR/AR-based_teleoperation -->
+
+    <owl:Class rdf:about="urn:CoRS#VR/AR-based_teleoperation">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#teleoperation"/>
+        <rdfs:label xml:lang="en">VR/AR-based teleoperation</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">controlling robots remotely using Virtual Reality (VR) or Augmented Reality (AR) interfaces, where VR provides an immersive 3D environment, and AR overlays digital information onto the real world, enhancing the operator&apos;s perception and interaction with the remote environment</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000002 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/BFO_0000002">
+        <owl:sameAs rdf:resource="urn:CoRS#continuant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000004 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/BFO_0000004">
+        <owl:sameAs rdf:resource="urn:CoRS#independent_continuant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000006 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/BFO_0000006">
+        <owl:sameAs rdf:resource="urn:CoRS#spatial_region"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/BFO_0000015">
+        <owl:sameAs rdf:resource="urn:CoRS#process"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/BFO_0000019">
+        <owl:sameAs rdf:resource="urn:CoRS#quality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000020 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/BFO_0000020">
+        <owl:sameAs rdf:resource="urn:CoRS#specifically_dependent_continuant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000028 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/BFO_0000028">
+        <owl:sameAs rdf:resource="urn:CoRS#three-dimensional_spatial_region"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/BFO_0000040">
+        <owl:sameAs rdf:resource="urn:CoRS#material_entity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
+        <owl:sameAs rdf:resource="urn:CoRS#part_of"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000141 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/BFO_0000141">
+        <owl:sameAs rdf:resource="urn:CoRS#immaterial_entity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GSSO_000229 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/GSSO_000229">
+        <owl:sameAs rdf:resource="urn:CoRS#agent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000064 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/IAO_0000064">
+        <owl:sameAs rdf:resource="urn:CoRS#algorithm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C61380 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C61380">
+        <owl:sameAs rdf:resource="urn:CoRS#phenomenon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000011 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0000011">
+        <owl:sameAs rdf:resource="urn:CoRS#planned_process"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000339 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/OBI_0000339">
+        <owl:sameAs rdf:resource="urn:CoRS#planning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002577 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/RO_0002577">
+        <owl:sameAs rdf:resource="urn:CoRS#system"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/dc/terms/Policy -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/dc/terms/Policy">
+        <owl:sameAs rdf:resource="urn:CoRS#policy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000015 -->
+
+    <owl:NamedIndividual rdf:about="http://semanticscience.org/resource/SIO_000015">
+        <owl:sameAs rdf:resource="urn:CoRS#information_content_entity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000315 -->
+
+    <owl:NamedIndividual rdf:about="http://semanticscience.org/resource/SIO_000315">
+        <owl:sameAs rdf:resource="urn:CoRS#functional_specification"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://id.loc.gov/authorities/sh85000677 -->
+
+    <owl:NamedIndividual rdf:about="https://id.loc.gov/authorities/sh85000677">
+        <owl:sameAs rdf:resource="urn:CoRS#action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://id.loc.gov/authorities/sh85029552 -->
+
+    <owl:NamedIndividual rdf:about="https://id.loc.gov/authorities/sh85029552">
+        <owl:sameAs rdf:resource="urn:CoRS#computer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://id.loc.gov/authorities/sh85037291 -->
+
+    <owl:NamedIndividual rdf:about="https://id.loc.gov/authorities/sh85037291">
+        <owl:sameAs rdf:resource="urn:CoRS#sensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://id.loc.gov/authorities/sh85050802 -->
+
+    <owl:NamedIndividual rdf:about="https://id.loc.gov/authorities/sh85050802">
+        <owl:sameAs rdf:resource="urn:CoRS#formal_language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://id.loc.gov/authorities/sh85082124 -->
+
+    <owl:NamedIndividual rdf:about="https://id.loc.gov/authorities/sh85082124">
+        <owl:sameAs rdf:resource="urn:CoRS#mathematical_model"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://id.loc.gov/authorities/sh85102696 -->
+
+    <owl:NamedIndividual rdf:about="https://id.loc.gov/authorities/sh85102696">
+        <owl:sameAs rdf:resource="urn:CoRS#planning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://id.loc.gov/authorities/sh88001849 -->
+
+    <owl:NamedIndividual rdf:about="https://id.loc.gov/authorities/sh88001849">
+        <owl:sameAs rdf:resource="urn:CoRS#phenomenon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://id.loc.gov/authorities/sh92000704 -->
+
+    <owl:NamedIndividual rdf:about="https://id.loc.gov/authorities/sh92000704">
+        <owl:sameAs rdf:resource="urn:CoRS#reinforcement_learning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://mathworld.wolfram.com/Problem.html -->
+
+    <owl:NamedIndividual rdf:about="https://mathworld.wolfram.com/Problem.html">
+        <owl:sameAs rdf:resource="urn:CoRS#mathematical_problem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q103940464 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q103940464">
+        <owl:sameAs rdf:resource="urn:CoRS#continuant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q104637332 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q104637332">
+        <owl:sameAs rdf:resource="urn:CoRS#planned_process"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q107 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q107">
+        <owl:sameAs rdf:resource="urn:CoRS#three-dimensional_spatial_region"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q11012 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q11012">
+        <owl:sameAs rdf:resource="urn:CoRS#robot"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q111862379 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q111862379">
+        <owl:sameAs rdf:resource="urn:CoRS#machine_learning_algorithm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q112702082 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q112702082">
+        <owl:sameAs rdf:resource="urn:CoRS#foundation_model"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q1142726 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q1142726">
+        <owl:sameAs rdf:resource="urn:CoRS#intelligent_agent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q115215420 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q115215420">
+        <owl:sameAs rdf:resource="urn:CoRS#machine_learning_model"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q115305900 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q115305900">
+        <owl:sameAs rdf:resource="urn:CoRS#large_language_model"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q1156854 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q1156854">
+        <owl:sameAs rdf:resource="urn:CoRS#policy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q1166625 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q1166625">
+        <owl:sameAs rdf:resource="urn:CoRS#mathematical_problem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q117286419 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q117286419">
+        <owl:sameAs rdf:resource="urn:CoRS#fine-tuning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q1207505 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q1207505">
+        <owl:sameAs rdf:resource="urn:CoRS#quality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q124149651 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q124149651">
+        <owl:sameAs rdf:resource="urn:CoRS#pre-training"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q124742024 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q124742024">
+        <owl:sameAs rdf:resource="urn:CoRS#imitation_learning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q12772763 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q12772763">
+        <owl:sameAs rdf:resource="urn:CoRS#instruction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131375342 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131375342">
+        <owl:sameAs rdf:resource="urn:CoRS#robotic_foundation_model"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131375457 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131375457">
+        <owl:sameAs rdf:resource="urn:CoRS#fleet_learning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131375532 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131375532">
+        <owl:sameAs rdf:resource="urn:CoRS#robotic_policy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131375592 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131375592">
+        <owl:sameAs rdf:resource="urn:CoRS#long-horizon_task"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131386587 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131386587">
+        <owl:sameAs rdf:resource="urn:CoRS#sensing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131386595 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131386595">
+        <owl:sameAs rdf:resource="urn:CoRS#multi-modal_sensing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131386609 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131386609">
+        <owl:sameAs rdf:resource="urn:CoRS#in-hand_manipulation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131431339 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131431339">
+        <owl:sameAs rdf:resource="urn:CoRS#end-to-end_robot_learning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131437566 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131437566">
+        <owl:sameAs rdf:resource="urn:CoRS#workplace_process"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131447813 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131447813">
+        <owl:sameAs rdf:resource="urn:CoRS#long-horizon_planning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131447951 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131447951">
+        <owl:sameAs rdf:resource="urn:CoRS#in_the_wild"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131447973 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131447973">
+        <owl:sameAs rdf:resource="urn:CoRS#language-conditioned_imitation_learning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131452673 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131452673">
+        <owl:sameAs rdf:resource="urn:CoRS#sampling-based_planning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131452746 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131452746">
+        <owl:sameAs rdf:resource="urn:CoRS#large_multimodal_model"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131452827 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131452827">
+        <owl:sameAs rdf:resource="urn:CoRS#hierarchical_search"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131452884 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131452884">
+        <owl:sameAs rdf:resource="urn:CoRS#path_planning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131452956 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131452956">
+        <owl:sameAs rdf:resource="urn:CoRS#re-planning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131453834 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131453834">
+        <owl:sameAs rdf:resource="urn:CoRS#expert-agent_observation_gap"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131453857 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131453857">
+        <owl:sameAs rdf:resource="urn:CoRS#autonomous_termination"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131453882 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131453882">
+        <owl:sameAs rdf:resource="urn:CoRS#robot_autonomy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q131455237 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q131455237">
+        <owl:sameAs rdf:resource="urn:CoRS#path-planning_algorithm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q1505671 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q1505671">
+        <owl:sameAs rdf:resource="urn:CoRS#therblig"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q1522115 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q1522115">
+        <owl:sameAs rdf:resource="urn:CoRS#energy_source"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q1545507 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q1545507">
+        <owl:sameAs rdf:resource="urn:CoRS#gripper"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q167676 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q167676">
+        <owl:sameAs rdf:resource="urn:CoRS#sensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q17320256 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q17320256">
+        <owl:sameAs rdf:resource="urn:CoRS#physical_process"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q192161 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q192161">
+        <owl:sameAs rdf:resource="urn:CoRS#formal_language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q19600063 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q19600063">
+        <owl:sameAs rdf:resource="urn:CoRS#transferable_skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q2014717 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q2014717">
+        <owl:sameAs rdf:resource="urn:CoRS#odometry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q205961 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q205961">
+        <owl:sameAs rdf:resource="urn:CoRS#skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q2297769 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q2297769">
+        <owl:sameAs rdf:resource="urn:CoRS#software_agent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q24229398 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q24229398">
+        <owl:sameAs rdf:resource="urn:CoRS#agent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q2690253 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q2690253">
+        <owl:sameAs rdf:resource="urn:CoRS#out_of_the_box_feature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q2920644 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q2920644">
+        <owl:sameAs rdf:resource="urn:CoRS#environment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q30589144 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q30589144">
+        <owl:sameAs rdf:resource="urn:CoRS#end-to-end_reinforcement_learning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q309100 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q309100">
+        <owl:sameAs rdf:resource="urn:CoRS#planning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q3249551 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q3249551">
+        <owl:sameAs rdf:resource="urn:CoRS#process"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q3435924 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q3435924">
+        <owl:sameAs rdf:resource="urn:CoRS#computational_problem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q360418 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q360418">
+        <owl:sameAs rdf:resource="urn:CoRS#construction_site"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q3621696 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q3621696">
+        <owl:sameAs rdf:resource="urn:CoRS#language_model"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q3982902 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q3982902">
+        <owl:sameAs rdf:resource="urn:CoRS#teleoperation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q4026292 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q4026292">
+        <owl:sameAs rdf:resource="urn:CoRS#action"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q423488 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q423488">
+        <owl:sameAs rdf:resource="urn:CoRS#actuator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q4485156 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q4485156">
+        <owl:sameAs rdf:resource="urn:CoRS#software_feature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q483247 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q483247">
+        <owl:sameAs rdf:resource="urn:CoRS#phenomenon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q486902 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q486902">
+        <owl:sameAs rdf:resource="urn:CoRS#mathematical_model"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q53617407 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q53617407">
+        <owl:sameAs rdf:resource="urn:CoRS#material_entity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q53617489 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q53617489">
+        <owl:sameAs rdf:resource="urn:CoRS#independent_continuant"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q584529 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q584529">
+        <owl:sameAs rdf:resource="urn:CoRS#humanoid_robot"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q58778 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q58778">
+        <owl:sameAs rdf:resource="urn:CoRS#system"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q621184 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q621184">
+        <owl:sameAs rdf:resource="urn:CoRS#problem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q628523 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q628523">
+        <owl:sameAs rdf:resource="urn:CoRS#message"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q68 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q68">
+        <owl:sameAs rdf:resource="urn:CoRS#computer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q7075535 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q7075535">
+        <owl:sameAs rdf:resource="urn:CoRS#obstacle_avoidance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q7094097 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q7094097">
+        <owl:sameAs rdf:resource="urn:CoRS#online_machine_learning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q7201366 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q7201366">
+        <owl:sameAs rdf:resource="urn:CoRS#Planning_Domain_Definition_Language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q830687 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q830687">
+        <owl:sameAs rdf:resource="urn:CoRS#reinforcement_learning"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q8366 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q8366">
+        <owl:sameAs rdf:resource="urn:CoRS#algorithm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.wikidata.org/wiki/Q845789 -->
+
+    <owl:NamedIndividual rdf:about="https://www.wikidata.org/wiki/Q845789">
+        <owl:sameAs rdf:resource="urn:CoRS#observable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:CoRS#Planning_Domain_Definition_Language -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#Planning_Domain_Definition_Language">
+        <rdf:type rdf:resource="urn:CoRS#formal_language"/>
+        <rdfs:label xml:lang="en">Planning Domain Definition Language</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:CoRS#action -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#action"/>
+    
+
+
+    <!-- urn:CoRS#actuator -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#actuator"/>
+    
+
+
+    <!-- urn:CoRS#agent -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#agent"/>
+    
+
+
+    <!-- urn:CoRS#algorithm -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#algorithm"/>
+    
+
+
+    <!-- urn:CoRS#autonomous_termination -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#autonomous_termination"/>
+    
+
+
+    <!-- urn:CoRS#computational_problem -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#computational_problem"/>
+    
+
+
+    <!-- urn:CoRS#computer -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#computer"/>
+    
+
+
+    <!-- urn:CoRS#construction_site -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#construction_site"/>
+    
+
+
+    <!-- urn:CoRS#continuant -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#continuant"/>
+    
+
+
+    <!-- urn:CoRS#end-to-end_reinforcement_learning -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#end-to-end_reinforcement_learning"/>
+    
+
+
+    <!-- urn:CoRS#end-to-end_robot_learning -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#end-to-end_robot_learning"/>
+    
+
+
+    <!-- urn:CoRS#energy_source -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#energy_source"/>
+    
+
+
+    <!-- urn:CoRS#environment -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#environment"/>
+    
+
+
+    <!-- urn:CoRS#expert-agent_observation_gap -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#expert-agent_observation_gap"/>
+    
+
+
+    <!-- urn:CoRS#fine-tuning -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#fine-tuning"/>
+    
+
+
+    <!-- urn:CoRS#fleet_learning -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#fleet_learning"/>
+    
+
+
+    <!-- urn:CoRS#formal_language -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#formal_language"/>
+    
+
+
+    <!-- urn:CoRS#foundation_model -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#foundation_model"/>
+    
+
+
+    <!-- urn:CoRS#functional_specification -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#functional_specification"/>
+    
+
+
+    <!-- urn:CoRS#gripper -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#gripper"/>
+    
+
+
+    <!-- urn:CoRS#hierarchical_search -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#hierarchical_search"/>
+    
+
+
+    <!-- urn:CoRS#humanoid_robot -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#humanoid_robot"/>
+    
+
+
+    <!-- urn:CoRS#imitation_learning -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#imitation_learning"/>
+    
+
+
+    <!-- urn:CoRS#immaterial_entity -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#immaterial_entity"/>
+    
+
+
+    <!-- urn:CoRS#in-hand_manipulation -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#in-hand_manipulation"/>
+    
+
+
+    <!-- urn:CoRS#in_the_wild -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#in_the_wild"/>
+    
+
+
+    <!-- urn:CoRS#independent_continuant -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#independent_continuant"/>
+    
+
+
+    <!-- urn:CoRS#information_content_entity -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#information_content_entity"/>
+    
+
+
+    <!-- urn:CoRS#instruction -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#instruction"/>
+    
+
+
+    <!-- urn:CoRS#intelligent_agent -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#intelligent_agent"/>
+    
+
+
+    <!-- urn:CoRS#language-conditioned_imitation_learning -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#language-conditioned_imitation_learning"/>
+    
+
+
+    <!-- urn:CoRS#language_model -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#language_model"/>
+    
+
+
+    <!-- urn:CoRS#large_language_model -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#large_language_model"/>
+    
+
+
+    <!-- urn:CoRS#large_multimodal_model -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#large_multimodal_model"/>
+    
+
+
+    <!-- urn:CoRS#long-horizon_planning -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#long-horizon_planning"/>
+    
+
+
+    <!-- urn:CoRS#long-horizon_task -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#long-horizon_task"/>
+    
+
+
+    <!-- urn:CoRS#machine_learning_algorithm -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#machine_learning_algorithm"/>
+    
+
+
+    <!-- urn:CoRS#machine_learning_model -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#machine_learning_model"/>
+    
+
+
+    <!-- urn:CoRS#material_entity -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#material_entity"/>
+    
+
+
+    <!-- urn:CoRS#mathematical_model -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#mathematical_model"/>
+    
+
+
+    <!-- urn:CoRS#mathematical_problem -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#mathematical_problem"/>
+    
+
+
+    <!-- urn:CoRS#message -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#message"/>
+    
+
+
+    <!-- urn:CoRS#multi-modal_sensing -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#multi-modal_sensing"/>
+    
+
+
+    <!-- urn:CoRS#observable -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#observable"/>
+    
+
+
+    <!-- urn:CoRS#obstacle_avoidance -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#obstacle_avoidance"/>
+    
+
+
+    <!-- urn:CoRS#odometry -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#odometry"/>
+    
+
+
+    <!-- urn:CoRS#online_machine_learning -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#online_machine_learning"/>
+    
+
+
+    <!-- urn:CoRS#out_of_the_box_feature -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#out_of_the_box_feature"/>
+    
+
+
+    <!-- urn:CoRS#part_of -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#part_of"/>
+    
+
+
+    <!-- urn:CoRS#path-planning_algorithm -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#path-planning_algorithm"/>
+    
+
+
+    <!-- urn:CoRS#path_planning -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#path_planning"/>
+    
+
+
+    <!-- urn:CoRS#phenomenon -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#phenomenon"/>
+    
+
+
+    <!-- urn:CoRS#physical_process -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#physical_process"/>
+    
+
+
+    <!-- urn:CoRS#planned_process -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#planned_process"/>
+    
+
+
+    <!-- urn:CoRS#planning -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#planning"/>
+    
+
+
+    <!-- urn:CoRS#policy -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#policy"/>
+    
+
+
+    <!-- urn:CoRS#pre-training -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#pre-training"/>
+    
+
+
+    <!-- urn:CoRS#problem -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#problem"/>
+    
+
+
+    <!-- urn:CoRS#process -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#process"/>
+    
+
+
+    <!-- urn:CoRS#quality -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#quality"/>
+    
+
+
+    <!-- urn:CoRS#re-planning -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#re-planning"/>
+    
+
+
+    <!-- urn:CoRS#reinforcement_learning -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#reinforcement_learning"/>
+    
+
+
+    <!-- urn:CoRS#robot -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#robot"/>
+    
+
+
+    <!-- urn:CoRS#robot_autonomy -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#robot_autonomy"/>
+    
+
+
+    <!-- urn:CoRS#robotic_foundation_model -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#robotic_foundation_model"/>
+    
+
+
+    <!-- urn:CoRS#robotic_policy -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#robotic_policy"/>
+    
+
+
+    <!-- urn:CoRS#sampling-based_planning -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#sampling-based_planning"/>
+    
+
+
+    <!-- urn:CoRS#sensing -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#sensing"/>
+    
+
+
+    <!-- urn:CoRS#sensor -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#sensor"/>
+    
+
+
+    <!-- urn:CoRS#skill -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#skill"/>
+    
+
+
+    <!-- urn:CoRS#software_agent -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#software_agent"/>
+    
+
+
+    <!-- urn:CoRS#software_feature -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#software_feature"/>
+    
+
+
+    <!-- urn:CoRS#spatial_region -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#spatial_region"/>
+    
+
+
+    <!-- urn:CoRS#specifically_dependent_continuant -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#specifically_dependent_continuant"/>
+    
+
+
+    <!-- urn:CoRS#system -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#system"/>
+    
+
+
+    <!-- urn:CoRS#teleoperation -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#teleoperation"/>
+    
+
+
+    <!-- urn:CoRS#therblig -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#therblig"/>
+    
+
+
+    <!-- urn:CoRS#three-dimensional_spatial_region -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#three-dimensional_spatial_region"/>
+    
+
+
+    <!-- urn:CoRS#transferable_skill -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#transferable_skill"/>
+    
+
+
+    <!-- urn:CoRS#workplace_process -->
+
+    <owl:NamedIndividual rdf:about="urn:CoRS#workplace_process"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:CoRS#action">
+        <rdfs:label xml:lang="en">action</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">something an agent can do or perform</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#actuator">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">component of a machine that is responsible for moving and controlling a mechanism or system</skos:definition>
+        <rdfs:label xml:lang="en">actuator</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#agent">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distinct and identifiable entity capable of performing actions</skos:definition>
+        <rdfs:label xml:lang="en">agent</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#algorithm">
+        <skos:definition xml:lang="en">A plan specification which describes the inputs and output of mathematical functions as well as workflow of execution for achieving an predefined objective. Algorithms are realized usually by means of implementation as computer programs for execution by automata.</skos:definition>
+        <rdfs:label xml:lang="en">algorithm</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#autonomous_termination">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ability of a robot to end its operations or deactivate itself without human intervention</skos:definition>
+        <rdfs:label xml:lang="en">autonomous termination</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#computational_problem">
+        <rdfs:label xml:lang="en">computational problem</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">problem of finding an effective algorithm which solves a given task</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#computer">
+        <rdfs:label xml:lang="en">computer</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">general-purpose device for performing arithmetic or logical operations</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#construction_site">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">place where a building is constructed, reconstructed or demolished</skos:definition>
+        <rdfs:label xml:lang="en">construction site</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#continuant">
+        <rdfs:label xml:lang="en">continuant</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">entity that persists, endures, or continues to exist through time while maintaining its identity</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#end-to-end_reinforcement_learning">
+        <rdfs:label xml:lang="en">end-to-end reinforcement learning</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">paradigm in machine learning where the entire process from input to output is learned through a single, integrated neural network or a series of interconnected models, in contrast to having independent subsystems</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#end-to-end_robot_learning">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">paradigm in robotics where the entire process from sensing the environment to executing actions is learned through a single, integrated neural network or a series of interconnected models</skos:definition>
+        <rdfs:label xml:lang="en">end-to-end robot learning</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#energy_source">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical or chemical phenomenon from which one can extract energy</skos:definition>
+        <rdfs:label xml:lang="en">energy source</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#environment">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in systems and engineering, part of the universe outside the boundaries of a system</skos:definition>
+        <rdfs:label xml:lang="en">environment</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#expert-agent_observation_gap">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the disparity between how a human expert would perceive, interpret, or interact with the environment compared to how a robotic agent does</skos:definition>
+        <rdfs:label xml:lang="en">expert-agent observation gap</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#fine-tuning">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process of taking a pre-trained model and further training it on a smaller, specific dataset to adapt or improve its performance for a particular task or domain</skos:definition>
+        <rdfs:label xml:lang="en">fine-tuning</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#fleet_learning">
+        <rdfs:label xml:lang="en">fleet learning</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">method in machine learning, where multiple devices or vehicles (a &quot;fleet&quot;) share data and learning experiences</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#formal_language">
+        <rdfs:label xml:lang="en">formal language</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">set of strings of symbols that may be constrained by rules that are specific to it; words whose letters are taken from an alphabet and are well-formed according to a specific set of rules</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#foundation_model">
+        <rdfs:label xml:lang="en">foundation model</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">machine learning model that is trained on vast datasets so it can be applied across a wide range of use cases</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#functional_specification">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specification that describes the characteristics of an object</skos:definition>
+        <rdfs:label xml:lang="en">functional specification</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#gripper">
+        <rdfs:label xml:lang="en">gripper</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">end-effector device designed to grasp, hold, and manipulate objects</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#hierarchical_search">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">method of path planning or task execution where the complexity of the problem is managed by breaking it down into several levels of abstraction or layers</skos:definition>
+        <rdfs:label xml:lang="en">hierarchical search</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#humanoid_robot">
+        <rdfs:label xml:lang="en">humanoid robot</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">robot with its body shape built to resemble that of the human body</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#imitation_learning">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">machine learning technique where agents learn from demonstrations</skos:definition>
+        <rdfs:label xml:lang="en">imitation learning</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#immaterial_entity">
+        <rdfs:label xml:lang="en">immaterial entity</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#in-hand_manipulation">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the ability of a robot to manipulate an object within its grasp, changing the object&apos;s position, orientation, or even its configuration without releasing it</skos:definition>
+        <rdfs:label xml:lang="en">in-hand manipulation</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#in_the_wild">
+        <rdfs:label xml:lang="en">in the wild</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in robotics, scenarios or environments where robots operate outside of controlled or laboratory settings</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#independent_continuant">
+        <rdfs:label xml:lang="en">independent continuant</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#information_content_entity">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an object that requires some background knowledge or procedure to correctly interpret</skos:definition>
+        <rdfs:label xml:lang="en">information content entity</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#instruction">
+        <rdfs:label xml:lang="en">instruction</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">message intended to convey a course of action for the audience to follow</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#intelligent_agent">
+        <rdfs:label xml:lang="en">intelligent agent</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">agent that perceives its environment, takes actions autonomously in order to achieve goals, and may improve its performance with learning or acquiring knowledge</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#language-conditioned_imitation_learning">
+        <rdfs:label xml:lang="en">language-conditioned imitation learning</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">training robots or agents to perform tasks based on natural language instructions. Instead of just watching and copying, the agent must interpret textual or spoken instructions to adapt its behavior or choose the right action sequence</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#language_model">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">probabilistic model of a natural or formal language, or generally of elements of signal sequences</skos:definition>
+        <rdfs:label xml:lang="en">language model</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#large_language_model">
+        <rdfs:label xml:lang="en">large language model</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LLM</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">language model built with very large amounts of texts</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#large_multimodal_model">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LMM</rdfs:label>
+        <rdfs:label xml:lang="en">large multimodal model</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">advanced type of artificial intelligence model that is designed to process, interpret, and generate multiple types of data or &quot;modalities&quot; simultaneously</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#long-horizon_planning">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in robotics, the process of determining the activities required to solve a long-horizon task</skos:definition>
+        <rdfs:label xml:lang="en">long-horizon planning</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#long-horizon_task">
+        <rdfs:label xml:lang="en">long-horizon task</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in robotics, a task that involves series of actions over an extended period or through multiple steps, possibly with significant interaction with the environment and respective re-planning</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#machine_learning_algorithm">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">method or algorithm used in machine learning</skos:definition>
+        <rdfs:label xml:lang="en">machine learning algorithm</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#machine_learning_model">
+        <rdfs:label xml:lang="en">machine learning model</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">algorithm or set of algorithms that learns from data to make predictions, classify, or recognize patterns without being explicitly programmed to perform the specific task</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#material_entity">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time</skos:definition>
+        <rdfs:label xml:lang="en">material entity</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#mathematical_model">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abstract representations of real-world phenomena using mathematical language and techniques. These models aim to simulate, predict, or explain aspects of the system they represent.</skos:definition>
+        <rdfs:label xml:lang="en">mathematical model</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#mathematical_problem">
+        <rdfs:label xml:lang="en">mathematical problem</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">problem that can be possibly solved via mathematics</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#message">
+        <rdfs:label xml:lang="en">message</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">discrete unit of communication intended by the source for consumption by some recipient or group of recipients</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#multi-modal_sensing">
+        <rdfs:label xml:lang="en">multi-modal sensing</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integration and use of multiple types of sensors to gather complementary information about the environment, the robot itself, or the interaction between the two</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#observable">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">metric</rdfs:label>
+        <rdfs:label xml:lang="en">observable</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">observable property or measurable value of an entity</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#obstacle_avoidance">
+        <rdfs:label xml:lang="en">obstacle avoidance</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in robotics, a task of satisfying some objective subject to non-intersection or non-collision position constraints</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#odometry">
+        <rdfs:label xml:lang="en">odometry</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the use of data from motion sensors to estimate change in position over time</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#online_machine_learning">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a method where a model is trained incrementally on data as it becomes available, in contrast to batch learning where the entire dataset is used at once</skos:definition>
+        <rdfs:label xml:lang="en">online machine learning</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#out_of_the_box_feature">
+        <rdfs:label xml:lang="en">out of the box feature</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OOTB</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">software feature that is usable immediately</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#part_of">
+        <rdfs:label xml:lang="en">part of</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#path-planning_algorithm">
+        <rdfs:label xml:lang="en">path-planning algorithm</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">computational method used to determine an optimal or feasible route from a starting point to a destination within a given environment, considering obstacles, constraints, and possibly optimizing for criteria like distance, time, or cost</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#path_planning">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aiming to find a route or action sequence for agents (robots, vehicles, characters) from start to destination</skos:definition>
+        <rdfs:label xml:lang="en">path planning</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#phenomenon">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">any object, fact, or occurrence perceived or observed</skos:definition>
+        <rdfs:label xml:lang="en">phenomenon</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#physical_process">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">any sequence of events or changes that occur in the physical world, governed by the laws of physics, involving energy, matter, or their interactions</skos:definition>
+        <rdfs:label xml:lang="en">physical process</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#planned_process">
+        <rdfs:label xml:lang="en">planned process</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process that takes place with human or agentic involvement or planning</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#planning">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process of determining the activities required to achieve a desired goal</skos:definition>
+        <rdfs:label xml:lang="en">planning</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#policy">
+        <rdfs:label xml:lang="en">policy</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">principle or protocol to guide decisions and achieve rational outcomes</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#pre-training">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in machine learning, the practice of training a model on a large dataset or a variety of tasks before fine-tuning it for a specific application or dataset</skos:definition>
+        <rdfs:label xml:lang="en">pre-training</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#problem">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">situation that invites resolution</skos:definition>
+        <rdfs:label xml:lang="en">problem</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#process">
+        <rdfs:label xml:lang="en">process</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">series of events which occur over an extended period of time</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#quality">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distinguishing feature</skos:definition>
+        <rdfs:label xml:lang="en">quality</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#re-planning">
+        <rdfs:label xml:lang="en">re-planning</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process of recalculating or adjusting an existing plan or path due to changes in the environment, new information, or unexpected events</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#reinforcement_learning">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RL</rdfs:label>
+        <rdfs:label xml:lang="en">reinforcement learning</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type of machine learning where an agent learns how to behave in an environment by performing actions and receiving rewards or penalties in return, aiming to maximize the cumulative reward over time</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#robot">
+        <rdfs:label xml:lang="en">robot</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mechanical or virtual artificial agent carrying out physical activities, which can be guided by an external control device or the control may be embedded within</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#robot_autonomy">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a robot&apos;s ability to operate independently of human intervention</skos:definition>
+        <rdfs:label xml:lang="en">robot autonomy</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#robotic_foundation_model">
+        <rdfs:label xml:lang="en">robotic foundation model</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">model pretrained on large-scale, high-quality, and diverse robotic data</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#robotic_policy">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">algorithms or decision-making rules embedded within robots, including those implemented via machine learning</skos:definition>
+        <rdfs:label xml:lang="en">robotic policy</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#sampling-based_planning">
+        <rdfs:label xml:lang="en">sampling-based planning</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">algorithms for path planning and motion planning problems, especially in high-dimensional or complex environments where traditional methods like grid-based searches or exact methods might be computationally infeasible</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#sensing">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">methods and technologies robots use to gather information about their environment, themselves, and the tasks they need to perform</skos:definition>
+        <rdfs:label xml:lang="en">sensing</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#sensor">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">device that measures a physical quantity and converts it into a signal</skos:definition>
+        <rdfs:label xml:lang="en">sensor</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#skill">
+        <rdfs:label xml:lang="en">skill</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">learned ability and competence to carry out an action</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#software_agent">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">computer program that acts for a user or other program in a relationship of agency</skos:definition>
+        <rdfs:label xml:lang="en">software agent</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#software_feature">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">distinguishing characteristic or capability of software</skos:definition>
+        <rdfs:label xml:lang="en">software feature</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#spatial_region">
+        <rdfs:label xml:lang="en">spatial region</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#specifically_dependent_continuant">
+        <rdfs:label xml:lang="en">specifically dependent continuant</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#system">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">set of interacting or interdependent components</skos:definition>
+        <rdfs:label xml:lang="en">system</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#teleoperation">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">operation of a system or machine at a distance</skos:definition>
+        <rdfs:label xml:lang="en">teleoperation</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#therblig">
+        <rdfs:label xml:lang="en">therblig</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unit of analysis in time-and-motion studies, representing one of the basic elements or actions involved in manual work</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#three-dimensional_spatial_region">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a three-dimensional extent within which entities exist and have physical relationships to each other</skos:definition>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">three-dimensional spatial region</rdfs:label>
+        <rdfs:label xml:lang="en">space</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#transferable_skill">
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">skill that is applicable and valuable across diverse jobs and industries, enhancing adaptability and employability</skos:definition>
+        <rdfs:label xml:lang="en">transferable skill</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:CoRS#workplace_process">
+        <rdfs:label xml:lang="en">workplace process</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.13) https://github.com/owlcs/owlapi -->
+
