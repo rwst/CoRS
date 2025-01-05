@@ -78,6 +78,36 @@
     
 
 
+    <!-- urn:CoRS#FIFO_memory -->
+
+    <owl:Class rdf:about="urn:CoRS#FIFO_memory">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#episodic_memory"/>
+        <rdfs:label xml:lang="en">FIFO memory</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">data structure where the first element added is the first one to be removed, akin to a queue. This concept applies both to traditional data management like sensor data handling or task scheduling, and to episodic memory models based on transformers, where memories are processed in the order they were encountered.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#LLM-augmented_hierarchical_planning -->
+
+    <owl:Class rdf:about="urn:CoRS#LLM-augmented_hierarchical_planning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planning"/>
+        <rdfs:label xml:lang="en">LLM-augmented hierarchical planning</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">method where large language models (LLMs) assist in breaking down complex tasks into hierarchical sub-tasks, enhancing the planning capabilities of robotic systems by leveraging natural language understanding</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#LLM-based_planner -->
+
+    <owl:Class rdf:about="urn:CoRS#LLM-based_planner">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planner"/>
+        <rdfs:label xml:lang="en">LLM-based planner</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">planning system that utilizes Large Language Models (LLMs) to generate, interpret, or guide the sequence of actions or decisions a robot must take to achieve specific tasks or goals. It leverages the natural language understanding and generation capabilities of LLMs to interpret complex environments, user commands, or objectives in natural language, and then formulate plans accordingly</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#LiDAR-inertial_odometry -->
 
     <owl:Class rdf:about="urn:CoRS#LiDAR-inertial_odometry">
@@ -99,11 +129,31 @@
     
 
 
+    <!-- urn:CoRS#What-Where-When_episodic_memory -->
+
+    <owl:Class rdf:about="urn:CoRS#What-Where-When_episodic_memory">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#episodic_memory"/>
+        <rdfs:label xml:lang="en">What-Where-When episodic memory</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">system that allows a robot to store and recall specific events or episodes, capturing the details of what happened, where it occurred, and when it took place, thereby enabling the robot to learn from and adapt to past experiences</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#action -->
 
     <owl:Class rdf:about="urn:CoRS#action">
         <rdfs:subClassOf rdf:resource="urn:CoRS#physical_process"/>
         <rdfs:subClassOf rdf:resource="urn:CoRS#planned_process"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#action_delimiter -->
+
+    <owl:Class rdf:about="urn:CoRS#action_delimiter">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#boundary"/>
+        <rdfs:label xml:lang="en">action delimiter</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">marker or signal that defines the start or end of a specific action or sequence of actions within a robotic program or control system</skos:definition>
     </owl:Class>
     
 
@@ -176,7 +226,7 @@
     <!-- urn:CoRS#arm-base_coordination -->
 
     <owl:Class rdf:about="urn:CoRS#arm-base_coordination">
-        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#magnitude"/>
         <rdfs:label xml:lang="en">arm-base coordination</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the synchronized movement and interaction between a robot&apos;s manipulator arm and its mobile base to achieve tasks efficiently and effectively</skos:definition>
     </owl:Class>
@@ -201,12 +251,83 @@
     
 
 
+    <!-- urn:CoRS#benchmark -->
+
+    <owl:Class rdf:about="urn:CoRS#benchmark">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#measurement_tool"/>
+        <rdfs:label xml:lang="en">robotics benchmark</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">standardized test or set of tests used to evaluate and compare the performance of robotic systems across various tasks, such as navigation, manipulation, or perception, ensuring consistent and fair assessment</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#bi-directional_model -->
+
+    <owl:Class rdf:about="urn:CoRS#bi-directional_model">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#mathematical_model"/>
+        <rdfs:label xml:lang="en">bi-directional model</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">control or learning system that operates effectively in both directions, allowing for both forward and inverse kinematic or dynamic calculations. This means the model can map from input to output (e.g., joint angles to end-effector position) and vice versa (e.g., desired end-effector position to required joint angles)</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#boundary -->
+
+    <owl:Class rdf:about="urn:CoRS#boundary">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#invariant"/>
+        <rdfs:label xml:lang="en">boundary</rdfs:label>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q875399"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dividing line between two areas or sets of points in a topological space</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#canonical_class_frame -->
+
+    <owl:Class rdf:about="urn:CoRS#canonical_class_frame">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#reference_frame"/>
+        <rdfs:label xml:lang="en">canonical class frame</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">standardized reference frame used to describe the pose (position and orientation) of robotic components or objects within a particular class or category, facilitating consistent representation and manipulation across different instances or models</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#chain-of-thought_prompt -->
 
     <owl:Class rdf:about="urn:CoRS#chain-of-thought_prompt">
         <rdfs:subClassOf rdf:resource="urn:CoRS#instruction"/>
         <rdfs:label xml:lang="en">chain-of-thought prompt</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sequence of reasoning steps or instructions used to guide a robot through complex tasks, breaking them down into simpler, logical sub-tasks</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#challenge -->
+
+    <owl:Class rdf:about="urn:CoRS#challenge">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#task"/>
+        <rdfs:label xml:lang="en">challenge</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">task or problem that tests the capabilities, efficiency, or adaptability of robotic systems, often involving complex environments or scenarios where robots must demonstrate advanced functionalities like navigation, manipulation, or interaction</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#class_feature -->
+
+    <owl:Class rdf:about="urn:CoRS#class_feature">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#quality"/>
+        <rdfs:label xml:lang="en">class feature</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">characteristic or attribute that defines or distinguishes a particular category within a classification system</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#cluttered_scene -->
+
+    <owl:Class rdf:about="urn:CoRS#cluttered_scene">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#environment"/>
+        <rdfs:label xml:lang="en">cluttered scene</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">environment filled with numerous objects or obstacles, making navigation and object manipulation more complex due to the density and disarray of items within the space</skos:definition>
     </owl:Class>
     
 
@@ -221,10 +342,37 @@
     
 
 
+    <!-- urn:CoRS#collaboration -->
+
+    <owl:Class rdf:about="urn:CoRS#collaboration">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planned_process"/>
+        <rdfs:label xml:lang="en">collaboration</rdfs:label>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q1145523"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">working together</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#collaboration_efficiency -->
+
+    <owl:Class rdf:about="urn:CoRS#collaboration_efficiency">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#magnitude"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:CoRS#part_of"/>
+                <owl:someValuesFrom rdf:resource="urn:CoRS#social_intelligence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">collaboration efficiency</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">measure of how effectively a robot can perform tasks in conjunction with human partners, often measured by task completion time, error rates, or success rates</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#collaborative_task -->
 
     <owl:Class rdf:about="urn:CoRS#collaborative_task">
-        <rdfs:subClassOf rdf:resource="urn:CoRS#computational_problem"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#task"/>
         <rdfs:label xml:lang="en">collaborative task</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">activity where robots and humans work together, sharing the workspace and responsibilities to achieve a common goal</skos:definition>
     </owl:Class>
@@ -242,6 +390,22 @@
     
 
 
+    <!-- urn:CoRS#communication_effectiveness -->
+
+    <owl:Class rdf:about="urn:CoRS#communication_effectiveness">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#magnitude"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:CoRS#part_of"/>
+                <owl:someValuesFrom rdf:resource="urn:CoRS#social_intelligence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">communication effectiveness</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">how well the robot can convey its intentions or understand human directives through various forms of communication (e.g., gestures, speech, visual cues)</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#computational_problem -->
 
     <owl:Class rdf:about="urn:CoRS#computational_problem">
@@ -253,7 +417,23 @@
     <!-- urn:CoRS#computer -->
 
     <owl:Class rdf:about="urn:CoRS#computer">
-        <rdfs:subClassOf rdf:resource="urn:CoRS#robot_subsystem"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#system"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#constraint_inference -->
+
+    <owl:Class rdf:about="urn:CoRS#constraint_inference">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#algorithm"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:CoRS#part_of"/>
+                <owl:someValuesFrom rdf:resource="urn:CoRS#social_perception"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">constraint inference</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process of deducing or identifying the limitations or restrictions that affect the movement or operation of collaborators (human or robot), based on the observed behavior or data from sensors, without explicit predefined constraints</skos:definition>
     </owl:Class>
     
 
@@ -266,9 +446,21 @@
     
 
 
+    <!-- urn:CoRS#contact_state -->
+
+    <owl:Class rdf:about="urn:CoRS#contact_state">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#state"/>
+        <rdfs:label xml:lang="en">contact state</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specific configuration or mode of interaction between a robot and its environment, particularly indicating whether and how the robot is in physical contact with objects or surfaces</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#continuant -->
 
-    <owl:Class rdf:about="urn:CoRS#continuant"/>
+    <owl:Class rdf:about="urn:CoRS#continuant">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
     
 
 
@@ -289,6 +481,37 @@
         <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_algorithm"/>
         <rdfs:label xml:lang="en">contrastive learning</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">machine learning technique where models learn to distinguish between similar (positive) and dissimilar (negative) pairs of data samples, enhancing feature representation through comparison</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#control_action -->
+
+    <owl:Class rdf:about="urn:CoRS#control_action">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#action"/>
+        <rdfs:label xml:lang="en">control action</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specific command or adjustment made by a control system to influence the behavior of a robot, aiming to achieve desired performance or maintain stability</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#control_primitive -->
+
+    <owl:Class rdf:about="urn:CoRS#control_primitive">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#control_action"/>
+        <rdfs:label xml:lang="en">control primitive</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basic, reusable control action or behavior that serves as a building block for more complex robotic tasks or movements</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#control_system -->
+
+    <owl:Class rdf:about="urn:CoRS#control_system">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robot_subsystem"/>
+        <rdfs:label xml:lang="en">control system</rdfs:label>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q959968"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">set of devices or software that manages, commands, directs, or regulates the behavior of a robot&apos;s mechanical components to achieve desired movements or actions</skos:definition>
     </owl:Class>
     
 
@@ -323,12 +546,33 @@
     
 
 
+    <!-- urn:CoRS#data_structure -->
+
+    <owl:Class rdf:about="urn:CoRS#data_structure">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#information_content_entity"/>
+        <rdfs:label xml:lang="en">data structure</rdfs:label>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q175263"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">particular way of storing and organizing data in a computer</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#decision_transformer -->
 
     <owl:Class rdf:about="urn:CoRS#decision_transformer">
         <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_model"/>
         <rdfs:label xml:lang="en">decision transformer</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">model that uses transformer architecture to convert sequences of observations, actions, and rewards into future actions, essentially learning to make decisions by predicting optimal behavior from historical data</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#demonstration -->
+
+    <owl:Class rdf:about="urn:CoRS#demonstration">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planned_process"/>
+        <rdfs:label xml:lang="en">demonstration</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">act of showing or performing a task by a human or another robot, which the observing robot then learns from to replicate or adapt the task in its own operations</skos:definition>
     </owl:Class>
     
 
@@ -346,10 +590,20 @@
     <!-- urn:CoRS#dependency_satisfaction_rate -->
 
     <owl:Class rdf:about="urn:CoRS#dependency_satisfaction_rate">
-        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#magnitude"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DSR</rdfs:label>
         <rdfs:label xml:lang="en">dependency satisfaction rate</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the proportion of subtasks completed in the correct order of dependencies</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#diffusion -->
+
+    <owl:Class rdf:about="urn:CoRS#diffusion">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#process"/>
+        <rdfs:label xml:lang="en">diffusion</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spread or distribution of information, behaviors, or physical particles (like gases or liquids) across a system or environment, often used in algorithms for tasks like path planning, sensor data processing, or swarm robotics to model how entities disperse or propagate within a space</skos:definition>
     </owl:Class>
     
 
@@ -373,12 +627,42 @@
     
 
 
+    <!-- urn:CoRS#distractor -->
+
+    <owl:Class rdf:about="urn:CoRS#distractor">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#environment_object"/>
+        <rdfs:label xml:lang="en">distractor</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">object or element in the environment that can interfere with or mislead a robot&apos;s perception, navigation, or task execution, often by causing false positives or negatives in sensor data interpretation</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#dropout -->
 
     <owl:Class rdf:about="urn:CoRS#dropout">
         <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_algorithm"/>
         <rdfs:label xml:lang="en">dropout</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">technique where randomly selected neurons are ignored during training, enhancing generalization and preventing overfitting in neural networks</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#egocentric_observation -->
+
+    <owl:Class rdf:about="urn:CoRS#egocentric_observation">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#observation"/>
+        <rdfs:label xml:lang="en">egocentric observation</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">perception of the environment from the robot&apos;s own viewpoint, where the robot&apos;s sensory data (like camera images or sensor readings) are centered around its own position and orientation</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#embedding -->
+
+    <owl:Class rdf:about="urn:CoRS#embedding">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#vector"/>
+        <rdfs:label xml:lang="en">embedding</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lower-dimensional vector that preserves relevant information of a point in a higher-dimensional vector space, used for tasks like navigation, recognition, or control</skos:definition>
     </owl:Class>
     
 
@@ -415,6 +699,15 @@
     
 
 
+    <!-- urn:CoRS#environment_object -->
+
+    <owl:Class rdf:about="urn:CoRS#environment_object">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#agent"/>
+        <rdfs:label xml:lang="en">environment object</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#environment_representation -->
 
     <owl:Class rdf:about="urn:CoRS#environment_representation">
@@ -424,10 +717,61 @@
     
 
 
+    <!-- urn:CoRS#episodic_memory -->
+
+    <owl:Class rdf:about="urn:CoRS#episodic_memory">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#memory_system"/>
+        <rdfs:label xml:lang="en">episodic memory</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ability of a robot to store, recall, and utilize information about specific past events or experiences, allowing it to learn from previous interactions or tasks to improve future performance</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#episodic_memory_capability -->
+
+    <owl:Class rdf:about="urn:CoRS#episodic_memory_capability">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#software_feature"/>
+        <rdfs:label xml:lang="en">episodic memory capacity</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">number of specific events or experiences from its past interactions or operations that a robot retains in episodic memory</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#expert-agent_observation_gap -->
 
     <owl:Class rdf:about="urn:CoRS#expert-agent_observation_gap">
         <rdfs:subClassOf rdf:resource="urn:CoRS#phenomenon"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#exploration_strategy -->
+
+    <owl:Class rdf:about="urn:CoRS#exploration_strategy">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#algorithm"/>
+        <rdfs:label xml:lang="en">exploration strategy</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">methods or algorithms used by a robot to systematically search and map unknown environments or gather new information to improve its understanding and performance in those settings</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#feature_cloud -->
+
+    <owl:Class rdf:about="urn:CoRS#feature_cloud">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_data_structure"/>
+        <rdfs:label xml:lang="en">feature cloud</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">collection of distinctive points or characteristics (features) in 3D space, typically derived from sensor data like LiDAR or depth cameras, used for tasks such as mapping, localization, and object recognition</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#few-shot_learning -->
+
+    <owl:Class rdf:about="urn:CoRS#few-shot_learning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_algorithm"/>
+        <rdfs:label xml:lang="en">few-shot learning</rdfs:label>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q110797734"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">machine learning approach that enables a robot to learn new tasks or recognize new objects from only a few examples or demonstrations, rather than requiring extensive data</skos:definition>
     </owl:Class>
     
 
@@ -492,6 +836,18 @@
     
 
 
+    <!-- urn:CoRS#graph-neural_network -->
+
+    <owl:Class rdf:about="urn:CoRS#graph-neural_network">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_model"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GNN</rdfs:label>
+        <rdfs:label xml:lang="en">graph-neural network</rdfs:label>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q107750691"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specialized artificial neural network that is designed for tasks whose inputs are graphs</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#gripper -->
 
     <owl:Class rdf:about="urn:CoRS#gripper">
@@ -507,6 +863,17 @@
         <rdfs:label xml:lang="en">grounding in embodiments</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">how well a robot executes commands in various contexts, indicating the degree of grounding.
 The adaptability of a robot&apos;s behavior when faced with new or changed environments, suggesting how deeply concepts are grounded in physical experiences</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#heuristic -->
+
+    <owl:Class rdf:about="urn:CoRS#heuristic">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#algorithm"/>
+        <rdfs:label xml:lang="en">heuristic</rdfs:label>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q1981968"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">algorithm that produces a solution in a reasonable time frame that is good enough for solving the problem at hand</skos:definition>
     </owl:Class>
     
 
@@ -549,6 +916,27 @@ The adaptability of a robot&apos;s behavior when faced with new or changed envir
     
 
 
+    <!-- urn:CoRS#high-level_skill -->
+
+    <owl:Class rdf:about="urn:CoRS#high-level_skill">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#skill"/>
+        <rdfs:label xml:lang="en">high-level skill</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">complex, abstract behaviors or tasks that involve coordination of multiple lower-level actions. These skills often require sophisticated decision-making, planning, and adaptability, such as object recognition, navigation in dynamic environments, or manipulation tasks that involve understanding context or human interaction</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#human-robot_collaboration -->
+
+    <owl:Class rdf:about="urn:CoRS#human-robot_collaboration">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#collaboration"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HRC</rdfs:label>
+        <rdfs:label xml:lang="en">human-robot collaboration</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">interaction and cooperation between humans and robots, where both work together to achieve shared tasks, leveraging each other&apos;s strengths to enhance efficiency, safety, and productivity</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#humanoid_robot -->
 
     <owl:Class rdf:about="urn:CoRS#humanoid_robot">
@@ -557,10 +945,20 @@ The adaptability of a robot&apos;s behavior when faced with new or changed envir
     
 
 
+    <!-- urn:CoRS#image-space_activation -->
+
+    <owl:Class rdf:about="urn:CoRS#image-space_activation">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#algorithm"/>
+        <rdfs:label xml:lang="en">image-space activation</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process of controlling or guiding robotic movements or actions based on the visual data captured from images or video in the robot&apos;s operational environment</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#imitation_learning -->
 
     <owl:Class rdf:about="urn:CoRS#imitation_learning">
-        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_algorithm"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#task_learning"/>
     </owl:Class>
     
 
@@ -616,7 +1014,13 @@ The adaptability of a robot&apos;s behavior when faced with new or changed envir
     <!-- urn:CoRS#instruction_parsing_accuracy -->
 
     <owl:Class rdf:about="urn:CoRS#instruction_parsing_accuracy">
-        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#magnitude"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:CoRS#part_of"/>
+                <owl:someValuesFrom rdf:resource="urn:CoRS#communication_effectiveness"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">instruction parsing accuracy</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the proportion of correctly parsed instructions mapped to the correct atomic
 action function names and parameters</skos:definition>
@@ -642,10 +1046,73 @@ action function names and parameters</skos:definition>
     
 
 
+    <!-- urn:CoRS#intent_inference -->
+
+    <owl:Class rdf:about="urn:CoRS#intent_inference">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#algorithm"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:CoRS#part_of"/>
+                <owl:someValuesFrom rdf:resource="urn:CoRS#collaboration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:CoRS#part_of"/>
+                <owl:someValuesFrom rdf:resource="urn:CoRS#social_perception"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">intent inference</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process by which a robot interprets and predicts the goals or intentions of humans or other agents based on observed actions, behaviors, or contextual cues</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#intra-category_transfer -->
+
+    <owl:Class rdf:about="urn:CoRS#intra-category_transfer">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#planned_process"/>
+        <rdfs:label xml:lang="en">intra-category transfer</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process where a robot applies knowledge or skills learned from one task to perform another task within the same category</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#invariant -->
+
+    <owl:Class rdf:about="urn:CoRS#invariant">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#specifically_dependent_continuant"/>
+        <rdfs:label xml:lang="en">invariant</rdfs:label>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q188211"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">property of mathematical objects that remains unchanged for transformations applied to the objects</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#language-conditioned_imitation_learning -->
 
     <owl:Class rdf:about="urn:CoRS#language-conditioned_imitation_learning">
         <rdfs:subClassOf rdf:resource="urn:CoRS#imitation_learning"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#language-conditioned_task -->
+
+    <owl:Class rdf:about="urn:CoRS#language-conditioned_task">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#task"/>
+        <rdfs:label xml:lang="en">language-conditioned task</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">task where the robot&apos;s actions are guided or specified by natural language instructions</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#language-described_object_arrangement -->
+
+    <owl:Class rdf:about="urn:CoRS#language-described_object_arrangement">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#object_arrangement"/>
+        <rdfs:label xml:lang="en">language-described object arrangement</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">use of natural language to specify the spatial configuration or positioning of objects within an environment. This involves translating verbal or textual instructions into precise physical arrangements of objects by a robot</skos:definition>
     </owl:Class>
     
 
@@ -685,7 +1152,7 @@ action function names and parameters</skos:definition>
     <!-- urn:CoRS#long-horizon_task -->
 
     <owl:Class rdf:about="urn:CoRS#long-horizon_task">
-        <rdfs:subClassOf rdf:resource="urn:CoRS#computational_problem"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#task"/>
     </owl:Class>
     
 
@@ -693,7 +1160,7 @@ action function names and parameters</skos:definition>
     <!-- urn:CoRS#low-level_controller -->
 
     <owl:Class rdf:about="urn:CoRS#low-level_controller">
-        <rdfs:subClassOf rdf:resource="urn:CoRS#robot_subsystem"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#control_system"/>
         <rdfs:label xml:lang="en">low-level controller</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">manages the direct interaction of robot software with hardware, handling tasks like motor control, sensor reading, and basic movement commands, ensuring precise execution of physical actions</skos:definition>
     </owl:Class>
@@ -727,6 +1194,37 @@ action function names and parameters</skos:definition>
     
 
 
+    <!-- urn:CoRS#magnitude -->
+
+    <owl:Class rdf:about="urn:CoRS#magnitude">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+        <rdfs:label xml:lang="en">magnitude</rdfs:label>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q2091629"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the displayed result of an ordering (or ranking) of the class of objects to which it belongs</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#manipulation_skill -->
+
+    <owl:Class rdf:about="urn:CoRS#manipulation_skill">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#skill"/>
+        <rdfs:label xml:lang="en">manipulation skill</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ability of a robot to interact with and alter its environment through physical actions, such as grasping, moving, or assembling objects with precision and control</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#manipulation_task -->
+
+    <owl:Class rdf:about="urn:CoRS#manipulation_task">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#task"/>
+        <rdfs:label xml:lang="en">manipulation task</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">any operation where a robot physically interacts with and alters the position, orientation, or physical state of objects in its environment using its end-effectors, such as grippers or manipulators</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#material_entity -->
 
     <owl:Class rdf:about="urn:CoRS#material_entity">
@@ -747,6 +1245,27 @@ action function names and parameters</skos:definition>
 
     <owl:Class rdf:about="urn:CoRS#mathematical_problem">
         <rdfs:subClassOf rdf:resource="urn:CoRS#problem"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#measurement_tool -->
+
+    <owl:Class rdf:about="urn:CoRS#measurement_tool">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#tool"/>
+        <rdfs:label xml:lang="en">measurement tool</rdfs:label>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q1047213"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tool (material or immaterial) used to generate a measurement</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#memory_system -->
+
+    <owl:Class rdf:about="urn:CoRS#memory_system">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_component"/>
+        <rdfs:label xml:lang="en">memory system</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">components that store, retrieve, and manage data necessary for the robot&apos;s operation, learning, and decision-making processes</skos:definition>
     </owl:Class>
     
 
@@ -788,12 +1307,51 @@ action function names and parameters</skos:definition>
     
 
 
+    <!-- urn:CoRS#multi-robot_collaboration -->
+
+    <owl:Class rdf:about="urn:CoRS#multi-robot_collaboration">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#collaboration"/>
+        <rdfs:label xml:lang="en">multi-robot collaboration</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#multi-robot_system -->
 
     <owl:Class rdf:about="urn:CoRS#multi-robot_system">
         <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_system"/>
         <rdfs:label xml:lang="en">multi-robot system</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">group of robots that work together to perform tasks, coordinating their actions to achieve common goals or enhance performance beyond what a single robot could accomplish</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#multimodal_experience_pool -->
+
+    <owl:Class rdf:about="urn:CoRS#multimodal_experience_pool">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#memory_system"/>
+        <rdfs:label xml:lang="en">multimodal experience pool</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">collection of diverse sensory data inputs, such as vision, sound, touch, and proprioception, that a robot uses to learn, adapt, and interact with its environment. This pool enables the integration and processing of multiple types of sensory information to enhance perception, decision-making, and task execution</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#object-centric_task_learning -->
+
+    <owl:Class rdf:about="urn:CoRS#object-centric_task_learning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#task_learning"/>
+        <rdfs:label xml:lang="en">object-centric task learning</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">method where a robot learns to perform tasks by focusing on the manipulation and understanding of specific objects involved in those tasks, rather than learning the entire task as a sequence of actions without regard to individual objects</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#object_arrangement -->
+
+    <owl:Class rdf:about="urn:CoRS#object_arrangement">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_data_structure"/>
+        <rdfs:label xml:lang="en">object arrangement</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">detailed specification of the positions, orientations, and relationships of objects within a given space</skos:definition>
     </owl:Class>
     
 
@@ -818,10 +1376,41 @@ action function names and parameters</skos:definition>
     
 
 
+    <!-- urn:CoRS#object_pose -->
+
+    <owl:Class rdf:about="urn:CoRS#object_pose">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#pose"/>
+        <rdfs:label xml:lang="en">object pose</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">position and orientation of an object in space, typically described by its coordinates (x, y, z) and rotation angles (roll, pitch, yaw) relative to a reference frame</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#object_rearrangement -->
+
+    <owl:Class rdf:about="urn:CoRS#object_rearrangement">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#manipulation_task"/>
+        <rdfs:label xml:lang="en">object rearrangement task</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">task or process where a robot manipulates and repositions one or more objects from initial states and locations to desired final states and locations within an environment</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#observable -->
 
     <owl:Class rdf:about="urn:CoRS#observable">
         <rdfs:subClassOf rdf:resource="urn:CoRS#quality"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#observation -->
+
+    <owl:Class rdf:about="urn:CoRS#observation">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#action"/>
+        <rdfs:label xml:lang="en">observation</rdfs:label>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q193181"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">active acquisition of information from a primary source</skos:definition>
     </owl:Class>
     
 
@@ -838,6 +1427,17 @@ action function names and parameters</skos:definition>
 
     <owl:Class rdf:about="urn:CoRS#odometry">
         <rdfs:subClassOf rdf:resource="urn:CoRS#algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#one-shot_learning -->
+
+    <owl:Class rdf:about="urn:CoRS#one-shot_learning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#few-shot_learning"/>
+        <rdfs:label xml:lang="en">one-shot learning</rdfs:label>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q7092335"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">machine learning approach that enables a robot to learn new tasks or recognize new objects from only one example or demonstration, rather than requiring extensive data</skos:definition>
     </owl:Class>
     
 
@@ -871,7 +1471,7 @@ action function names and parameters</skos:definition>
     <!-- urn:CoRS#parallel_task_execution -->
 
     <owl:Class rdf:about="urn:CoRS#parallel_task_execution">
-        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#task_execution"/>
         <rdfs:label xml:lang="en">parallel task execution</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in a single robot, the simultaneous performance of multiple tasks or operations by different components or processors within a robotic system to enhance efficiency and speed; in multi-robot systems, the coordinated simultaneous operation of single or multiple tasks by different robots within the system to achieve collective goals more efficiently</skos:definition>
     </owl:Class>
@@ -896,7 +1496,9 @@ action function names and parameters</skos:definition>
 
     <!-- urn:CoRS#phenomenon -->
 
-    <owl:Class rdf:about="urn:CoRS#phenomenon"/>
+    <owl:Class rdf:about="urn:CoRS#phenomenon">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
     
 
 
@@ -904,6 +1506,16 @@ action function names and parameters</skos:definition>
 
     <owl:Class rdf:about="urn:CoRS#physical_process">
         <rdfs:subClassOf rdf:resource="urn:CoRS#process"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#pick-and-place_task -->
+
+    <owl:Class rdf:about="urn:CoRS#pick-and-place_task">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#manipulation_task"/>
+        <rdfs:label xml:lang="en">pick-and-place task</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">operational task where a robot picks up an object from one location and moves it to another specified location</skos:definition>
     </owl:Class>
     
 
@@ -938,6 +1550,16 @@ action function names and parameters</skos:definition>
 
     <owl:Class rdf:about="urn:CoRS#policy">
         <rdfs:subClassOf rdf:resource="urn:CoRS#functional_specification"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#pose -->
+
+    <owl:Class rdf:about="urn:CoRS#pose">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_data_structure"/>
+        <rdfs:label xml:lang="en">pose</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">position and orientation of a robot or its components in space, typically described by coordinates and angles relative to a fixed reference frame</skos:definition>
     </owl:Class>
     
 
@@ -994,6 +1616,16 @@ action function names and parameters</skos:definition>
     
 
 
+    <!-- urn:CoRS#random_exploration -->
+
+    <owl:Class rdf:about="urn:CoRS#random_exploration">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#exploration_strategy"/>
+        <rdfs:label xml:lang="en">random exploration</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">strategy where a robot performs actions randomly to discover new states or environments, often used in learning and mapping tasks to gather data without prior knowledge or specific guidance.</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#re-planning -->
 
     <owl:Class rdf:about="urn:CoRS#re-planning">
@@ -1015,7 +1647,7 @@ action function names and parameters</skos:definition>
     <!-- urn:CoRS#real-world_task -->
 
     <owl:Class rdf:about="urn:CoRS#real-world_task">
-        <rdfs:subClassOf rdf:resource="urn:CoRS#computational_problem"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#task"/>
         <rdfs:label xml:lang="en">real-world task</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">any physical activity or operation that a robot performs in an actual, non-simulated environment, such as navigating through a space, manipulating objects, or interacting with humans or other entities in real-time</skos:definition>
     </owl:Class>
@@ -1032,10 +1664,41 @@ action function names and parameters</skos:definition>
     
 
 
+    <!-- urn:CoRS#reference_frame -->
+
+    <owl:Class rdf:about="urn:CoRS#reference_frame">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#mathematical_model"/>
+        <rdfs:label xml:lang="en">reference frame</rdfs:label>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q184876"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">materialization of an abstract coordinate system</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#reinforcement_learning -->
 
     <owl:Class rdf:about="urn:CoRS#reinforcement_learning">
         <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#relative_pose -->
+
+    <owl:Class rdf:about="urn:CoRS#relative_pose">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#pose"/>
+        <rdfs:label xml:lang="en">relative pose</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">position and orientation of one object or robot part with respect to another object or a reference frame</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#responsiveness -->
+
+    <owl:Class rdf:about="urn:CoRS#responsiveness">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#magnitude"/>
+        <rdfs:label xml:lang="en">responsiveness</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">speed and accuracy with which a robot reacts to human cues or changes in the environment</skos:definition>
     </owl:Class>
     
 
@@ -1057,7 +1720,7 @@ action function names and parameters</skos:definition>
     <!-- urn:CoRS#robot_autonomy -->
 
     <owl:Class rdf:about="urn:CoRS#robot_autonomy">
-        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#magnitude"/>
     </owl:Class>
     
 
@@ -1127,6 +1790,7 @@ action function names and parameters</skos:definition>
     <!-- urn:CoRS#robotic_software_data_structure -->
 
     <owl:Class rdf:about="urn:CoRS#robotic_software_data_structure">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#data_structure"/>
         <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_component"/>
         <rdfs:label xml:lang="en">robotic software data structure</rdfs:label>
     </owl:Class>
@@ -1140,6 +1804,16 @@ action function names and parameters</skos:definition>
         <rdfs:subClassOf rdf:resource="urn:CoRS#system"/>
         <rdfs:label xml:lang="en">robotic system</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">integrated setup of hardware and software components, including actuators, sensors, controllers, and processors, designed to perform tasks autonomously or semi-autonomously</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#sample_efficiency -->
+
+    <owl:Class rdf:about="urn:CoRS#sample_efficiency">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#magnitude"/>
+        <rdfs:label xml:lang="en">sample efficiency</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ability of a learning algorithm to achieve high performance with a minimal number of training samples or experiences</skos:definition>
     </owl:Class>
     
 
@@ -1164,7 +1838,7 @@ action function names and parameters</skos:definition>
     <!-- urn:CoRS#semantic_grounding_success_rate -->
 
     <owl:Class rdf:about="urn:CoRS#semantic_grounding_success_rate">
-        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#magnitude"/>
         <rdfs:label xml:lang="en">semantic grounding success rate</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">percentage of instances where a robot correctly associates sensory inputs with their corresponding meanings or concepts in the real world</skos:definition>
     </owl:Class>
@@ -1225,12 +1899,64 @@ action function names and parameters</skos:definition>
     
 
 
+    <!-- urn:CoRS#skill_acquisition_efficiency -->
+
+    <owl:Class rdf:about="urn:CoRS#skill_acquisition_efficiency">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#magnitude"/>
+        <rdfs:label xml:lang="en">skill acquisition efficiency</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">how quickly and effectively a robot can learn and master new tasks or skills, optimizing the time, resources, and data required for learning</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#skill_library -->
 
     <owl:Class rdf:about="urn:CoRS#skill_library">
         <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_data_structure"/>
         <rdfs:label xml:lang="en">skill library</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">collection of reusable, pre-programmed or learned behaviors or actions that robots can execute to perform specific tasks efficiently</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#social_compatibility -->
+
+    <owl:Class rdf:about="urn:CoRS#social_compatibility">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#magnitude"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:CoRS#part_of"/>
+                <owl:someValuesFrom rdf:resource="urn:CoRS#social_intelligence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">social compatibility</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">how well the robot integrates into social or team dynamics, considering aspects like personality matching or cultural sensitivity</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#social_intelligence -->
+
+    <owl:Class rdf:about="urn:CoRS#social_intelligence">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#magnitude"/>
+        <rdfs:label xml:lang="en">social intelligence</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ability of a robot to interact socially with humans through its physical presence, using body language, gestures, and expressions to communicate and understand social cues effectively</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#social_perception -->
+
+    <owl:Class rdf:about="urn:CoRS#social_perception">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#magnitude"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:CoRS#part_of"/>
+                <owl:someValuesFrom rdf:resource="urn:CoRS#communication_effectiveness"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">social perception</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ability of a robot to interpret and understand social cues and human behaviors, such as facial expressions, body language, tone of voice, and social interactions, to enable more natural and effective human-robot interaction</skos:definition>
     </owl:Class>
     
 
@@ -1267,6 +1993,33 @@ action function names and parameters</skos:definition>
     
 
 
+    <!-- urn:CoRS#state -->
+
+    <owl:Class rdf:about="urn:CoRS#state">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#phenomenon"/>
+        <rdfs:label xml:lang="en">state</rdfs:label>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q3505845"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">presence of stable values of a set of variables of an object</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#synchronization_level -->
+
+    <owl:Class rdf:about="urn:CoRS#synchronization_level">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#magnitude"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:CoRS#part_of"/>
+                <owl:someValuesFrom rdf:resource="urn:CoRS#social_intelligence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">synchronization level</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">indicates how well the robot&apos;s actions are timed with those of humans, ensuring smooth and timely collaboration</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#system -->
 
     <owl:Class rdf:about="urn:CoRS#system">
@@ -1275,11 +2028,28 @@ action function names and parameters</skos:definition>
     
 
 
+    <!-- urn:CoRS#task -->
+
+    <owl:Class rdf:about="urn:CoRS#task">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#computational_problem"/>
+        <rdfs:label xml:lang="en">task</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specific action or set of actions that a robot is programmed to perform, often involving manipulation, navigation, or interaction within its environment to achieve a particular goal</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#task_decomposition -->
 
     <owl:Class rdf:about="urn:CoRS#task_decomposition">
         <rdfs:subClassOf rdf:resource="urn:CoRS#algorithm"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:CoRS#part_of"/>
+                <owl:someValuesFrom rdf:resource="urn:CoRS#planning"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">task decomposition</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process of breaking down a complex task into smaller, manageable sub-tasks or actions that can be sequentially executed by a robot</skos:definition>
     </owl:Class>
     
 
@@ -1294,10 +2064,30 @@ action function names and parameters</skos:definition>
     
 
 
+    <!-- urn:CoRS#task_execution -->
+
+    <owl:Class rdf:about="urn:CoRS#task_execution">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#action"/>
+        <rdfs:label xml:lang="en">task execution</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process by which a robot carries out a specific set of actions or operations to achieve a predefined goal or complete a designated task</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#task_learning -->
+
+    <owl:Class rdf:about="urn:CoRS#task_learning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#algorithm"/>
+        <rdfs:label xml:lang="en">task learning</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">process where an agent or system learns how to perform a specific task or set of tasks. This can include learning sequences of actions, understanding the context of tasks, or adapting to different scenarios for the same task</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#task_success_rate -->
 
     <owl:Class rdf:about="urn:CoRS#task_success_rate">
-        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#magnitude"/>
         <rdfs:label xml:lang="en">task success rate</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">percentage of tasks that a robot completes successfully out of all attempted tasks</skos:definition>
     </owl:Class>
@@ -1322,6 +2112,17 @@ action function names and parameters</skos:definition>
     
 
 
+    <!-- urn:CoRS#text_embedding -->
+
+    <owl:Class rdf:about="urn:CoRS#text_embedding">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#embedding"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_data_structure"/>
+        <rdfs:label xml:lang="en">text embedding</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">numerical representation of text data where words or phrases are converted into fixed-size vectors in a high-dimensional space, capturing semantic meanings and relationships to facilitate tasks like natural language processing, command interpretation, or human-robot interaction</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#therblig -->
 
     <owl:Class rdf:about="urn:CoRS#therblig">
@@ -1338,10 +2139,52 @@ action function names and parameters</skos:definition>
     
 
 
+    <!-- urn:CoRS#tool -->
+
+    <owl:Class rdf:about="urn:CoRS#tool">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#independent_continuant"/>
+        <rdfs:label xml:lang="en">tool</rdfs:label>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q123691918"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">something used to perform an operation</skos:definition>
+    </owl:Class>
+    
+
+
     <!-- urn:CoRS#transferable_skill -->
 
     <owl:Class rdf:about="urn:CoRS#transferable_skill">
         <rdfs:subClassOf rdf:resource="urn:CoRS#skill"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#unimodal_storage -->
+
+    <owl:Class rdf:about="urn:CoRS#unimodal_storage">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#memory_system"/>
+        <rdfs:label xml:lang="en">unimodal storage</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">system or method where data related to a single sensory modality (e.g., vision, touch, sound) is stored and processed independently from data of other modalities</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#variational_autoencoder -->
+
+    <owl:Class rdf:about="urn:CoRS#variational_autoencoder">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_model"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VAE</rdfs:label>
+        <rdfs:label xml:lang="en">variational autoencoder</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type of neural network used for efficient data representation, compression, and generation by learning latent representations of input data, often applied in tasks like anomaly detection, motion planning, and sensor data processing</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#vector -->
+
+    <owl:Class rdf:about="urn:CoRS#vector">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#data_structure"/>
+        <rdfs:label xml:lang="en">vector</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">element of a vector space, implemented as list of values</skos:definition>
     </owl:Class>
     
 
@@ -1360,7 +2203,7 @@ action function names and parameters</skos:definition>
     <!-- urn:CoRS#whole-body_control -->
 
     <owl:Class rdf:about="urn:CoRS#whole-body_control">
-        <rdfs:subClassOf rdf:resource="urn:CoRS#observable"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#magnitude"/>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WBC</rdfs:label>
         <rdfs:label xml:lang="en">whole-body control</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the coordinated control of all degrees of freedom of a robot, ensuring that the entire body works in unison to achieve a task, while respecting physical constraints and optimizing performance metrics</skos:definition>
@@ -1372,6 +2215,27 @@ action function names and parameters</skos:definition>
 
     <owl:Class rdf:about="urn:CoRS#workplace_process">
         <rdfs:subClassOf rdf:resource="urn:CoRS#planned_process"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#zero-shot_learning -->
+
+    <owl:Class rdf:about="urn:CoRS#zero-shot_learning">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#machine_learning_algorithm"/>
+        <rdfs:label xml:lang="en">zero-shot learning</rdfs:label>
+        <owl:sameAs rdf:resource="https://www.wikidata.org/wiki/Q96416030"/>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">problem setup in machine learning, where at test time, a learner observes samples from classes that were not observed during training, and needs to predict the class they belong to</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- urn:CoRS#zero-shot_transfer -->
+
+    <owl:Class rdf:about="urn:CoRS#zero-shot_transfer">
+        <rdfs:subClassOf rdf:resource="urn:CoRS#software_feature"/>
+        <rdfs:label xml:lang="en">zero-shot transfer</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ability of a robot to perform a new task without any prior specific training on that task, by leveraging knowledge or skills learned from other related tasks</skos:definition>
     </owl:Class>
     
 
@@ -1389,7 +2253,7 @@ action function names and parameters</skos:definition>
     <!-- urn:CoRS#6DOF_pose -->
 
     <owl:Class rdf:about="urn:CoRS#6DOF_pose">
-        <rdfs:subClassOf rdf:resource="urn:CoRS#robotic_software_data_structure"/>
+        <rdfs:subClassOf rdf:resource="urn:CoRS#object_pose"/>
         <rdfs:label xml:lang="en">6DOF pose</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the position and orientation of an object in three-dimensional space, described by six degrees of freedom: three for translation (x, y, z coordinates) and three for rotation (roll, pitch, yaw)</skos:definition>
     </owl:Class>
@@ -2739,8 +3603,8 @@ action function names and parameters</skos:definition>
      -->
 
     <rdf:Description rdf:about="urn:CoRS#action">
-        <rdfs:label xml:lang="en">action</rdfs:label>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">something an agent can do or perform</skos:definition>
+        <rdfs:label xml:lang="en">action</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="urn:CoRS#actuator">
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">component of a machine that is responsible for moving and controlling a mechanism or system</skos:definition>
@@ -2843,6 +3707,7 @@ action function names and parameters</skos:definition>
     </rdf:Description>
     <rdf:Description rdf:about="urn:CoRS#independent_continuant">
         <rdfs:label xml:lang="en">independent continuant</rdfs:label>
+        <owl:sameAs rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
     </rdf:Description>
     <rdf:Description rdf:about="urn:CoRS#information_content_entity">
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">an object that requires some background knowledge or procedure to correctly interpret</skos:definition>
@@ -2875,8 +3740,8 @@ action function names and parameters</skos:definition>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">advanced type of artificial intelligence model that is designed to process, interpret, and generate multiple types of data or &quot;modalities&quot; simultaneously</skos:definition>
     </rdf:Description>
     <rdf:Description rdf:about="urn:CoRS#long-horizon_planning">
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in robotics, the process of determining the activities required to solve a long-horizon task</skos:definition>
         <rdfs:label xml:lang="en">long-horizon planning</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in robotics, the process of determining the activities required to solve a long-horizon task</skos:definition>
     </rdf:Description>
     <rdf:Description rdf:about="urn:CoRS#long-horizon_task">
         <rdfs:label xml:lang="en">long-horizon task</rdfs:label>
@@ -2964,8 +3829,8 @@ action function names and parameters</skos:definition>
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">principle or protocol to guide decisions and achieve rational outcomes</skos:definition>
     </rdf:Description>
     <rdf:Description rdf:about="urn:CoRS#pre-training">
-        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in machine learning, the practice of training a model on a large dataset or a variety of tasks before fine-tuning it for a specific application or dataset</skos:definition>
         <rdfs:label xml:lang="en">pre-training</rdfs:label>
+        <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in machine learning, the practice of training a model on a large dataset or a variety of tasks before fine-tuning it for a specific application or dataset</skos:definition>
     </rdf:Description>
     <rdf:Description rdf:about="urn:CoRS#problem">
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">situation that invites resolution</skos:definition>
@@ -3033,6 +3898,8 @@ action function names and parameters</skos:definition>
     </rdf:Description>
     <rdf:Description rdf:about="urn:CoRS#specifically_dependent_continuant">
         <rdfs:label xml:lang="en">specifically dependent continuant</rdfs:label>
+        <owl:sameAs rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">property</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="urn:CoRS#system">
         <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">set of interacting or interdependent components</skos:definition>
